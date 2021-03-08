@@ -8,7 +8,7 @@
 	$nome=$_POST["nome"]; 
 	// inizio gestione connessione e inserimento
 	$host_name='localhost';
-	$user_name='pippo';
+	$user_name='root';
 	$conn=mysql_connect($host_name,$user_name,'')
 	        or die ("Impossibile stabilire una connessione con il server");
 	$db=mysql_select_db("grest")

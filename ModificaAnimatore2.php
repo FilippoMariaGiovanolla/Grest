@@ -5,7 +5,7 @@
 <BODY>
 	<?php
 		$host_name='localhost';
-		$user_name='pippo';
+		$user_name='root';
 		$conn=mysql_connect($host_name,$user_name,'')
 			or die ("Impossibile stabilire una connessione con il server, chiudere la pagina di inserimento dati");
 		$db=mysql_select_db("grest")
@@ -53,17 +53,17 @@
 			<TD>
 				<SELECT NAME="turno">
 				<?php 
-					if($riga[3]=='Lunedi') echo"<OPTION VALUE=".$riga[3].">Lunedì";
-					if($riga[3]=='Martedi') echo"<OPTION VALUE=".$riga[3].">Martedì";
-					if($riga[3]=='Mercoledi') echo"<OPTION VALUE=".$riga[3].">Mercoledì";
-					if($riga[3]=='Giovedi') echo"<OPTION VALUE=".$riga[3].">Giovedì";
-					if($riga[3]=='Venerdi') echo"<OPTION VALUE=".$riga[3].">Venerdì";
+					if($riga[3]=='Lunedi') echo"<OPTION VALUE=".$riga[3].">Lunedï¿½";
+					if($riga[3]=='Martedi') echo"<OPTION VALUE=".$riga[3].">Martedï¿½";
+					if($riga[3]=='Mercoledi') echo"<OPTION VALUE=".$riga[3].">Mercoledï¿½";
+					if($riga[3]=='Giovedi') echo"<OPTION VALUE=".$riga[3].">Giovedï¿½";
+					if($riga[3]=='Venerdi') echo"<OPTION VALUE=".$riga[3].">Venerdï¿½";
 					if($riga[3]=='Nessuno') echo"<OPTION VALUE=".$riga[3].">Nessuno";
-					if($riga[3]!='Lunedi') echo"<OPTION VALUE='Lunedi'>Lunedì";
-					if($riga[3]!='Martedi') echo"<OPTION VALUE='Martedi'>Martedì";
-					if($riga[3]!='Mercoledi') echo"<OPTION VALUE='Mercoledi'>Mercoledì";
-					if($riga[3]!='Giovedi') echo"<OPTION VALUE='Giovedi'>Giovedì";
-					if($riga[3]!='Venerdi') echo"<OPTION VALUE='Venerdi'>Venerdì";
+					if($riga[3]!='Lunedi') echo"<OPTION VALUE='Lunedi'>Lunedï¿½";
+					if($riga[3]!='Martedi') echo"<OPTION VALUE='Martedi'>Martedï¿½";
+					if($riga[3]!='Mercoledi') echo"<OPTION VALUE='Mercoledi'>Mercoledï¿½";
+					if($riga[3]!='Giovedi') echo"<OPTION VALUE='Giovedi'>Giovedï¿½";
+					if($riga[3]!='Venerdi') echo"<OPTION VALUE='Venerdi'>Venerdï¿½";
 					if($riga[3]!='Nessuno') echo"<OPTION VALUE='Nessuno'>Nessuno";
 				?>
 				</SELECT>	

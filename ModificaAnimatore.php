@@ -15,7 +15,7 @@
 	$telefono3=$_POST["telefono3"];
 	$squadra=$_POST["squadra"];
 	$hostname='localhost';
-	$username='pippo';
+	$username='root';
 	$conn=mysql_connect($hostname,$username,'')
 		or die("Impossibile stabilire una connessione con il server");
 	$db=mysql_select_db("grest")

@@ -5,7 +5,7 @@
 <BODY>
      <?php
 	$nominativo=$_POST["nominativo"];
-	$exp=explode(" ", $nominativo); // la funzione explode è equiparabile allo StringTokenizer di Java
+	$exp=explode(" ", $nominativo); // la funzione explode Ã¨ equiparabile allo StringTokenizer di Java
 	$nome_vecchio=$exp[0];
 	$cognome_vecchio=$exp[1];
 	$nome=$_POST["nome"]; 
@@ -35,7 +35,7 @@
 	$gita1sett4=$_POST["gita1sett4"];
 	$gita2sett4=$_POST["gita2sett4"];
 	$hostname='localhost';
-	$username='pippo';
+	$username='root';
 	$conn=mysql_connect($hostname,$username,'')
 		or die("Impossibile stabilire una connessione con il server");
 	$db=mysql_select_db("grest")

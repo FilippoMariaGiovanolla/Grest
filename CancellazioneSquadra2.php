@@ -6,7 +6,7 @@
 	<?php
 		$colore=$_POST["colore"];
 		$hostname='localhost';
-		$username='pippo';
+		$username='root';
 		$conn=mysql_connect($hostname,$username,'')
 			or die("Impossibile stabilire una connessione con il server");
 		$db=mysql_select_db("grest")
@@ -15,7 +15,7 @@
 			    WHERE Colore='$colore' ";
 		$risultato=mysql_query($query)
 			or die("Cancellazione fallita; chiudere la pagina");
-		echo("Cancellazione avvenuta con successo; la squadra di colore ".$colore." non rientra più nella tabella Squadre");
+		echo("Cancellazione avvenuta con successo; la squadra di colore ".$colore." non rientra piï¿½ nella tabella Squadre");
 	?>
 	<BR>
 	<BR>

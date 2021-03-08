@@ -7,7 +7,7 @@
 		$nome=$_POST["nome"];
 		$cognome=$_POST["cognome"];
 		$hostname='localhost';
-		$username='pippo';
+		$username='root';
 		$conn=mysql_connect($hostname,$username,'')
 			or die("Impossibile stabilire una connessione con il server");
 		$db=mysql_select_db("grest")
@@ -16,7 +16,7 @@
 			    WHERE Nome='$nome' AND Cognome='$cognome' ";
 		$risultato=mysql_query($query)
 			or die("Cancellazione fallita; chiudere la pagina");
-		echo("Cancellazione avvenuta con successo; ".$nome." ".$cognome." non rientra più nella tabella Animatori");
+		echo("Cancellazione avvenuta con successo; ".$nome." ".$cognome." non rientra piï¿½ nella tabella Animatori");
 	?>
 	<BR>
 	<BR>

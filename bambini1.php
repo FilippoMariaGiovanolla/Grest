@@ -5,7 +5,7 @@
 <BODY>
 	<?php
 		$host_name='localhost';
-		$user_name='pippo';
+		$user_name='root';
 		$conn=mysql_connect($host_name,$user_name,'')
 			or die ("Impossibile stabilire una connessione con il server, chiudere la pagina di inserimento dati");
 		$db=mysql_select_db("grest")
@@ -79,7 +79,7 @@
 			<TD>
 				<SELECT NAME="pregrest">					
 					<OPTION VALUE="No">No
-					<OPTION VALUE="Si">Sì
+					<OPTION VALUE="Si">Sï¿½
 				</SELECT>
 			</TD>
 		<TD></TD><TD></TD><TD></TD>
@@ -87,7 +87,7 @@
 			<TD>
 				<SELECT NAME="mensa">					
 					<OPTION VALUE="No">No
-					<OPTION VALUE="Si">Sì
+					<OPTION VALUE="Si">Sï¿½
 				</SELECT>
 			</TD>
 		</TR>
@@ -106,7 +106,7 @@
 			<TD>
 				<SELECT NAME="iscritto_sett_1">					
 					<OPTION VALUE="No">No
-					<OPTION VALUE="Si">Sì
+					<OPTION VALUE="Si">Sï¿½
 				</SELECT>
 			</TD>
 			<TD></TD><TD></TD><TD></TD>
@@ -114,7 +114,7 @@
 			<TD>
 				<SELECT NAME="pagata_sett_1">
 					<OPTION VALUE="No">No
-					<OPTION VALUE="Si">Sì
+					<OPTION VALUE="Si">Sï¿½
 				</SELECT>
 			</TD>
 			<TD></TD><TD></TD><TD></TD>
@@ -162,7 +162,7 @@
 			<TD>
 				<SELECT NAME="iscritto_sett_2">					
 					<OPTION VALUE="No">No
-					<OPTION VALUE="Si">Sì
+					<OPTION VALUE="Si">Sï¿½
 				</SELECT>
 			</TD>
 			<TD></TD><TD></TD><TD></TD>
@@ -170,7 +170,7 @@
 			<TD>
 				<SELECT NAME="pagata_sett_2">					
 					<OPTION VALUE="No">No
-					<OPTION VALUE="Si">Sì
+					<OPTION VALUE="Si">Sï¿½
 				</SELECT>
 			</TD>
 			<TD></TD><TD></TD><TD></TD>
@@ -216,7 +216,7 @@
 			<TD>
 				<SELECT NAME="iscritto_sett_3">					
 					<OPTION VALUE="No">No
-					<OPTION VALUE="Si">Sì
+					<OPTION VALUE="Si">Sï¿½
 				</SELECT>
 			</TD>
 			<TD></TD><TD></TD><TD></TD>
@@ -224,7 +224,7 @@
 			<TD>
 				<SELECT NAME="pagata_sett_3">					
 					<OPTION VALUE="No">No
-					<OPTION VALUE="Si">Sì
+					<OPTION VALUE="Si">Sï¿½
 				</SELECT>
 			</TD>
 			<TD></TD><TD></TD><TD></TD>
@@ -270,7 +270,7 @@
 			<TD>
 				<SELECT NAME="iscritto_sett_4">					
 					<OPTION VALUE="No">No
-					<OPTION VALUE="Si">Sì
+					<OPTION VALUE="Si">Sï¿½
 				</SELECT>
 			</TD>
 			<TD></TD><TD></TD><TD></TD>
@@ -278,7 +278,7 @@
 			<TD>
 				<SELECT NAME="pagata_sett_4">					
 					<OPTION VALUE="No">No
-					<OPTION VALUE="Si">Sì
+					<OPTION VALUE="Si">Sï¿½
 				</SELECT>
 			</TD>
 			<TD></TD><TD></TD><TD></TD>

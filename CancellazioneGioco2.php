@@ -6,7 +6,7 @@
 	<?php
 		$codice=$_POST["codice"];
 		$hostname='localhost';
-		$username='pippo';
+		$username='root';
 		$conn=mysql_connect($hostname,$username,'')
 			or die("Impossibile stabilire una connessione con il server");
 		$db=mysql_select_db("grest")
@@ -15,7 +15,7 @@
 			    WHERE Codice='$codice' ";
 		$risultato=mysql_query($query)
 			or die("Cancellazione fallita; chiudere la pagina");
-		echo("Cancellazione avvenuta con successo; il gioco avente codice ".$codice." non rientra più nella tabella Giochi");
+		echo("Cancellazione avvenuta con successo; il gioco avente codice ".$codice." non rientra piï¿½ nella tabella Giochi");
 	?>
 	<BR>
 	<BR>

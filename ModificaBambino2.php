@@ -5,7 +5,7 @@
 <BODY>
 	<?php
 		$host_name='localhost';
-		$user_name='pippo';
+		$user_name='root';
 		$conn=mysql_connect($host_name,$user_name,'')
 			or die ("Impossibile stabilire una connessione con il server, chiudere la pagina di inserimento dati");
 		$db=mysql_select_db("grest")
@@ -129,7 +129,7 @@
 					if($riga[4]=='Si')
 						echo("<OPTION VALUE='No'>No");
 					else
-						echo("<OPTION VALUE='Si'>Sì");
+						echo("<OPTION VALUE='Si'>Sï¿½");
 				?>
 				</SELECT>
 			</TD>
@@ -142,7 +142,7 @@
 					if($riga[5]=="Si")
 						echo"<OPTION VALUE='No'>No";
 					else
-						echo"<OPTION VALUE='Si'>Sì";
+						echo"<OPTION VALUE='Si'>Sï¿½";
 				?>
 				</SELECT>
 			</TD>
@@ -166,7 +166,7 @@
 					if($riga[6]=="Si")
 						echo"<OPTION VALUE='No'>No";
 					else
-						echo"<OPTION VALUE='Si'>Sì";
+						echo"<OPTION VALUE='Si'>Sï¿½";
 				?>
 				</SELECT>
 			</TD>
@@ -179,7 +179,7 @@
 					if($riga[7]=="Si")
 						echo"<OPTION VALUE='No'>No";
 					else
-						echo"<OPTION VALUE='Si'>Sì";
+						echo"<OPTION VALUE='Si'>Sï¿½";
 				?>	
 				</SELECT>
 			</TD>
@@ -203,7 +203,7 @@
 						if(!($codice[$i]==$riga[18]))
 							echo("<OPTION VALUE=".$codice[$i].">".$codice[$i]);
 						if($riga[18]!="no")
-							$iscritto="si"; // variabile che serve per testare se il bambino risulta o meno già iscritto ad una gita
+							$iscritto="si"; // variabile che serve per testare se il bambino risulta o meno giï¿½ iscritto ad una gita
 					   }
 					if($iscritto=="si")
 						echo"<OPTION VALUE='no'>Non iscritto";
@@ -251,7 +251,7 @@
 					if($riga[8]=="Si")
 						echo"<OPTION VALUE='No'>No";
 					else
-						echo"<OPTION VALUE='Si'>Sì";
+						echo"<OPTION VALUE='Si'>Sï¿½";
 				?>	
 				</SELECT>
 			</TD>
@@ -264,7 +264,7 @@
 					if($riga[9]=="Si")
 						echo"<OPTION VALUE='No'>No";
 					else
-						echo"<OPTION VALUE='Si'>Sì";
+						echo"<OPTION VALUE='Si'>Sï¿½";
 				?>	
 				</SELECT>
 			</TD>
@@ -333,7 +333,7 @@
 					if($riga[10]=="Si")
 						echo"<OPTION VALUE='No'>No";
 					else
-						echo"<OPTION VALUE='Si'>Sì";
+						echo"<OPTION VALUE='Si'>Sï¿½";
 				?>
 				</SELECT>
 			</TD>
@@ -346,7 +346,7 @@
 					if($riga[11]=="Si")
 						echo"<OPTION VALUE='No'>No";
 					else
-						echo"<OPTION VALUE='Si'>Sì";
+						echo"<OPTION VALUE='Si'>Sï¿½";
 				?>	
 				</SELECT>
 			</TD>
@@ -415,7 +415,7 @@
 					if($riga[12]=="Si")
 						echo"<OPTION VALUE='No'>No";
 					else
-						echo"<OPTION VALUE='Si'>Sì";
+						echo"<OPTION VALUE='Si'>Sï¿½";
 				?>
 				</SELECT>
 			</TD>
@@ -428,7 +428,7 @@
 					if($riga[13]=="Si")
 						echo"<OPTION VALUE='No'>No";
 					else
-						echo"<OPTION VALUE='Si'>Sì";
+						echo"<OPTION VALUE='Si'>Sï¿½";
 				?>
 				</SELECT>
 			</TD>

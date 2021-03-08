@@ -5,7 +5,7 @@
 <BODY>
 	<?php
 		$host_name='localhost';
-		$user_name='pippo';
+		$user_name='root';
 		$conn=mysql_connect($host_name,$user_name,'')
 			or die ("Impossibile stabilire una connessione con il server, chiudere la pagina di inserimento dati");
 		$db=mysql_select_db("grest")

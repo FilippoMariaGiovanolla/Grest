@@ -5,7 +5,7 @@
 <BODY>
 	<?php
 		$host_name='localhost';
-		$user_name='pippo';
+		$user_name='root';
 		$conn=mysql_connect($host_name,$user_name,'')
 			or die ("Impossibile stabilire una connessione con il server, chiudere la pagina di inserimento dati");
 		$db=mysql_select_db("grest")
@@ -65,11 +65,11 @@
 			<TD>Turno</TD>
 			<TD>
 				<SELECT NAME="turno">
-					<OPTION VALUE="Lunedi">Lunedì
-					<OPTION VALUE="Martedi">Martedì
-					<OPTION VALUE="Mercoledi">Mercoledì
-					<OPTION VALUE="Giovedi">Giovedì
-					<OPTION VALUE="Venerdi">Venerdì
+					<OPTION VALUE="Lunedi">Lunedï¿½
+					<OPTION VALUE="Martedi">Martedï¿½
+					<OPTION VALUE="Mercoledi">Mercoledï¿½
+					<OPTION VALUE="Giovedi">Giovedï¿½
+					<OPTION VALUE="Venerdi">Venerdï¿½
 					<OPTION VALUE="Nessuno">Nessuno
 				</SELECT>
 			</TD>

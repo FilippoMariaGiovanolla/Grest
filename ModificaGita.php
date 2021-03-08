@@ -8,7 +8,7 @@
 	$codice=$_POST["codice"];
 	$descrizione=$_POST["descrizione"]; 
 	$hostname='localhost';
-	$username='pippo';
+	$username='root';
 	$conn=mysql_connect($hostname,$username,'')
 		or die("Impossibile stabilire una connessione con il server");
 	$db=mysql_select_db("grest")
