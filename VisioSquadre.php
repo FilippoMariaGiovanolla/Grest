@@ -11,9 +11,9 @@
 		$host_name='localhost';
 		$user_name='root';
 		$conn=mysql_connect($host_name,$user_name,'')
-			or die ("Impossibile stabilire una connessione con il server, chiudere la pagina di inserimento dati");
+			or die ("Impossibile stabilire una connessione con il server, chiudere la pagina di inserimento dati: ".mysql_error());
 		$db=mysql_select_db("grest")
-			or die ("Impossibile selezionare il database desiderato, chiudere la pagina di inserimento dati");
+			or die ("Impossibile selezionare il database desiderato, chiudere la pagina di inserimento dati: ".mysql_error());
 		$i=0;
 ?>
 <p align="center"><u><font size="4">E' possibile effettuare le operazioni seguenti:</font></u></p>
@@ -36,7 +36,7 @@ dei dati di ogni squadra</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 					$query="SELECT Colore
 						    FROM Squadre";
 					$risultato=mysql_query($query)
-						or die("Impossibile selezionare i colori delle squadre; chiudere la pagina");
+						or die("Impossibile selezionare i colori delle squadre; chiudere la pagina: ".mysql_error());
 					echo"<OPTION VALUE=''>Seleziona";
 					while ($colore=mysql_fetch_row($risultato))
 						echo("<OPTION VALUE=".$colore[$i].">".$colore[$i]);
@@ -65,7 +65,7 @@ dei dati di ogni squadra</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 				<SELECT NAME="colore">
 				<?php
 					$risultato=mysql_query($query)
-						or die("Impossibile selezionare i colori delle squadre; chiudere la pagina");
+						or die("Impossibile selezionare i colori delle squadre; chiudere la pagina: ".mysql_error());
 					echo"<OPTION VALUE=''>Seleziona";	
 					while ($colore=mysql_fetch_row($risultato))
 						echo("<OPTION VALUE=".$colore[$i].">".$colore[$i]);

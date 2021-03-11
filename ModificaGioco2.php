@@ -7,16 +7,16 @@
 		$host_name='localhost';
 		$user_name='root';
 		$conn=mysql_connect($host_name,$user_name,'')
-			or die ("Impossibile stabilire una connessione con il server, chiudere la pagina di inserimento dati");
+			or die ("Impossibile stabilire una connessione con il server, chiudere la pagina di inserimento dati: ".mysql_error());
 		$db=mysql_select_db("grest")
-			or die ("Impossibile selezionare il database desiderato, chiudere la pagina di inserimento dati");
+			or die ("Impossibile selezionare il database desiderato, chiudere la pagina di inserimento dati: ".mysql_error());
 		$i=0;
 		$nome_vecchio=$_POST["nome_vecchio"];
 		$query="SELECT *
 			    FROM Giochi
 			    WHERE Nome='$nome_vecchio'";
 		$risultato=mysql_query($query)
-			or die("Impossibile selezionare i dati del gioco desiderato; chiudere la pagina o tornare indietro");
+			or die("Impossibile selezionare i dati del gioco desiderato; chiudere la pagina o tornare indietro: ".mysql_error());
 		$riga=mysql_fetch_row($risultato);
 		echo("<h3>Modifica ora i campi del modulo sottostante con tutti i dati aggiornati relativi al gioco</h3>");
 		
@@ -45,7 +45,7 @@
 					            FROM Animatori
 						    ORDER BY Nome";
 					$risultato=mysql_query($query)
-						or die("Impossibile selezionare i nomi degli animatori e procedere alla modifica; chiudere la pagina");
+						or die("Impossibile selezionare i nomi degli animatori e procedere alla modifica; chiudere la pagina: ".mysql_error());
 					echo("<OPTION VALUE=".$riga[3].">".$riga[3]);
 					while ($nome=mysql_fetch_row($risultato))
 					   {
@@ -63,7 +63,7 @@
 					            FROM Animatori
 						    ORDER BY Cognome";
 					$risultato=mysql_query($query)
-						or die("Impossibile selezionare i cognomi degli animatori e procedere alla modifica; chiudere la pagina");
+						or die("Impossibile selezionare i cognomi degli animatori e procedere alla modifica; chiudere la pagina: ".mysql_error());
 					echo("<OPTION VALUE=".$riga[4].">".$riga[4]);
 					while ($cognome=mysql_fetch_row($risultato))
 					   {

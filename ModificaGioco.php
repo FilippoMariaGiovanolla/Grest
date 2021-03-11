@@ -13,9 +13,9 @@
 	$hostname='localhost';
 	$username='root';
 	$conn=mysql_connect($hostname,$username,'')
-		or die("Impossibile stabilire una connessione con il server");
+		or die("Impossibile stabilire una connessione con il server: ".mysql_error());
 	$db=mysql_select_db("grest")
-		or die("Impossibile selezionare il database del grest");
+		or die("Impossibile selezionare il database del grest: ".mysql_error());
 	$query="UPDATE Giochi
 		    SET Codice='$codice',Nome='$nome',Descrizione='$descrizione',NomeRelatore='$nomerelatore',
 		          CognomeRelatore='$cognomerelatore'
@@ -28,7 +28,7 @@
 			      FROM Giochi
 			      WHERE Codice='$codice' ";
 		$risultato2=mysql_query($query2)
-			or die("Impossibile mostrare i nuovi dati del bambino");
+			or die("Impossibile mostrare i nuovi dati del bambino: ".mysql_error());
 		$righe=mysql_num_rows($risultato2);
 		$colonne=mysql_num_fields($risultato2);
 		if ($righe>0)

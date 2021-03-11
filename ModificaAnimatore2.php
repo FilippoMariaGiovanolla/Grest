@@ -7,9 +7,9 @@
 		$host_name='localhost';
 		$user_name='root';
 		$conn=mysql_connect($host_name,$user_name,'')
-			or die ("Impossibile stabilire una connessione con il server, chiudere la pagina di inserimento dati");
+			or die ("Impossibile stabilire una connessione con il server, chiudere la pagina di inserimento dati: ".mysql_error());
 		$db=mysql_select_db("grest")
-			or die ("Impossibile selezionare il database desiderato, chiudere la pagina di inserimento dati");
+			or die ("Impossibile selezionare il database desiderato, chiudere la pagina di inserimento dati: ".mysql_error());
 		$i=0;
 		$nome_vecchio=$_POST["nome_vecchio"];
 		$cognome_vecchio=$_POST["cognome_vecchio"];
@@ -17,7 +17,7 @@
 			    FROM Animatori
 			    WHERE Nome='$nome_vecchio' AND Cognome='$cognome_vecchio'";
 		$risultato=mysql_query($query)
-			or die("Impossibile selezionare i dati dell'animatore selezionato; chiudere la pagina o tornare indietro");
+			or die("Impossibile selezionare i dati dell'animatore selezionato; chiudere la pagina o tornare indietro: ".mysql_error());
 		//$colonne=mysql_num_fields($risultato);
 		echo("<h3>Modifica ora i campi del modulo sottostante con tutti i dati aggiornati relativi all'animatore</h3>");
 		
@@ -105,7 +105,7 @@
 						    FROM Squadre
 						    ORDER BY Colore";
 					$risultato=mysql_query($query)
-						or die("Impossibile selezionare i colori delle squadre e procedere alla modifica; chiudere la pagina");
+						or die("Impossibile selezionare i colori delle squadre e procedere alla modifica; chiudere la pagina: ".mysql_error());
 					echo"<OPTION VALUE=".$riga[7].">".$riga[7];
 					while ($squadra=mysql_fetch_row($risultato))
 					   {

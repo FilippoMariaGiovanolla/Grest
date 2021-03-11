@@ -8,16 +8,16 @@
 	$hostname='localhost';
 	$username='root';
 	$conn=mysql_connect($hostname,$username,'')
-		or die("Impossibile stabilire una connessione con il server");
+		or die("Impossibile stabilire una connessione con il server: ".mysql_error());
 	$db=mysql_select_db("grest")
-		or die("Impossibile selezionare il database del grest");
+		or die("Impossibile selezionare il database del grest: ".mysql_error());
 	$query="SELECT Nome, Cognome
 		    FROM bambini
 		    WHERE gita1sett1='$gita' or gita2sett1='$gita' or gita1sett2='$gita' or gita2sett2='$gita' or gita1sett3='$gita' or 
 			      gita2sett3='$gita' or gita1sett4='$gita' or gita2sett4='$gita'
 		    ORDER BY Cognome";
 	$risultato=mysql_query($query)
-		or die("Query fallita");
+		or die("Query fallita: ".mysql_error());
 	$righe=mysql_num_rows($risultato);
 	$colonne=mysql_num_fields($risultato);
 	if ($righe>0)
@@ -43,7 +43,7 @@
 		    WHERE gita1sett1='$gita' or gita2sett1='$gita' or gita1sett2='$gita' or gita2sett2='$gita' or gita1sett3='$gita' or 
 			      gita2sett3='$gita' or gita1sett4='$gita' or gita2sett4='$gita'";
 		$risultato=mysql_query($query)
-		or die("Query fallita");
+		or die("Query fallita: ".mysql_error());
 		echo("<TABLE BORDER='1' ALIGN='CENTER'
 				<TR>
 					<TD><B><CENTER>Numero totale</CENTER></B></TD>					

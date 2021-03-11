@@ -37,9 +37,9 @@
 	$hostname='localhost';
 	$username='root';
 	$conn=mysql_connect($hostname,$username,'')
-		or die("Impossibile stabilire una connessione con il server");
+		or die("Impossibile stabilire una connessione con il server: ".mysql_error());
 	$db=mysql_select_db("grest")
-		or die("Impossibile selezionare il database del grest");
+		or die("Impossibile selezionare il database del grest: ".mysql_error());
 	$query="UPDATE Bambini
 		    SET Nome='$nome', Cognome='$cognome', Classe='$classe', Sesso='$sesso', PreGrest='$pregrest', Mensa='$mensa', 
 		          IscrittoSett_1='$iscritto_sett_1', PagataSett_1='$pagata_sett_1', IscrittoSett_2='$iscritto_sett_2', 
@@ -57,7 +57,7 @@
 			      FROM Bambini
 			      WHERE Nome='$nome' AND Cognome='$cognome' ";
 		$risultato2=mysql_query($query2)
-			or die("Impossibile mostrare i nuovi dati del bambino");
+			or die("Impossibile mostrare i nuovi dati del bambino: ".mysql_error());
 		$righe=mysql_num_rows($risultato2);
 		$colonne=mysql_num_fields($risultato2);
 		if ($righe>0)

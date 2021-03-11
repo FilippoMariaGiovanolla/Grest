@@ -8,15 +8,15 @@
 	$hostname='localhost';
 	$username='root';
 	$conn=mysql_connect($hostname,$username,'')
-		or die("Impossibile stabilire una connessione con il server");
+		or die("Impossibile stabilire una connessione con il server: ".mysql_error());
 	$db=mysql_select_db("grest")
-		or die("Impossibile selezionare il database del grest");
+		or die("Impossibile selezionare il database del grest: ".mysql_error());
 	$query="SELECT Nome, Cognome
 		    FROM bambini
 		    WHERE ColoreSquadra='$colore'
 		    ORDER BY Classe, Cognome, Nome";
 	$risultato=mysql_query($query)
-		or die("Impossibile visualizzare i bambini della squadra selezionata; chiudere la pagina");
+		or die("Impossibile visualizzare i bambini della squadra selezionata; chiudere la pagina: ".mysql_error());
 	$righe=mysql_num_rows($risultato);
 	$colonne=mysql_num_fields($risultato);
 	if ($righe>0)
@@ -41,7 +41,7 @@
 			      FROM Bambini
 			      WHERE ColoreSquadra='$colore'";
 		$risultato2=mysql_query($query2)
-			or die("Impossibile contare tutti i componenti della squadra.");
+			or die("Impossibile contare tutti i componenti della squadra: ".mysql_error());
 		$righe2=mysql_num_rows($risultato2);
 		if($righe2>0)
 		{
@@ -56,7 +56,7 @@
 				      FROM Bambini
 				      WHERE ColoreSquadra='$colore' AND IscrittoSett_".$k."='si'";
 			$risultato3=mysql_query($query3)
-				or die("Impossibile contare quanti dei bambini di questa squadra sono iscritti alla settimana ".$k);
+				or die("Impossibile contare quanti dei bambini di questa squadra sono iscritti alla settimana ".$k.": ".mysql_error());
 			$righe3=mysql_num_rows($risultato3);
 			if($righe3>0)
 			{

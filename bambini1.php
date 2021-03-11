@@ -79,7 +79,7 @@
 			<TD>
 				<SELECT NAME="pregrest">					
 					<OPTION VALUE="No">No
-					<OPTION VALUE="Si">S�
+					<OPTION VALUE="Si">S&igrave;
 				</SELECT>
 			</TD>
 		<TD></TD><TD></TD><TD></TD>
@@ -87,7 +87,7 @@
 			<TD>
 				<SELECT NAME="mensa">					
 					<OPTION VALUE="No">No
-					<OPTION VALUE="Si">S�
+					<OPTION VALUE="Si">S&igrave;
 				</SELECT>
 			</TD>
 		</TR>
@@ -106,7 +106,7 @@
 			<TD>
 				<SELECT NAME="iscritto_sett_1">					
 					<OPTION VALUE="No">No
-					<OPTION VALUE="Si">S�
+					<OPTION VALUE="Si">S&igrave;
 				</SELECT>
 			</TD>
 			<TD></TD><TD></TD><TD></TD>
@@ -114,7 +114,7 @@
 			<TD>
 				<SELECT NAME="pagata_sett_1">
 					<OPTION VALUE="No">No
-					<OPTION VALUE="Si">S�
+					<OPTION VALUE="Si">S&igrave;
 				</SELECT>
 			</TD>
 			<TD></TD><TD></TD><TD></TD>
@@ -162,7 +162,7 @@
 			<TD>
 				<SELECT NAME="iscritto_sett_2">					
 					<OPTION VALUE="No">No
-					<OPTION VALUE="Si">S�
+					<OPTION VALUE="Si">S&igrave;
 				</SELECT>
 			</TD>
 			<TD></TD><TD></TD><TD></TD>
@@ -170,7 +170,7 @@
 			<TD>
 				<SELECT NAME="pagata_sett_2">					
 					<OPTION VALUE="No">No
-					<OPTION VALUE="Si">S�
+					<OPTION VALUE="Si">S&igrave;
 				</SELECT>
 			</TD>
 			<TD></TD><TD></TD><TD></TD>
@@ -216,7 +216,7 @@
 			<TD>
 				<SELECT NAME="iscritto_sett_3">					
 					<OPTION VALUE="No">No
-					<OPTION VALUE="Si">S�
+					<OPTION VALUE="Si">S&igrave;
 				</SELECT>
 			</TD>
 			<TD></TD><TD></TD><TD></TD>
@@ -224,7 +224,7 @@
 			<TD>
 				<SELECT NAME="pagata_sett_3">					
 					<OPTION VALUE="No">No
-					<OPTION VALUE="Si">S�
+					<OPTION VALUE="Si">S&igrave;
 				</SELECT>
 			</TD>
 			<TD></TD><TD></TD><TD></TD>
@@ -270,7 +270,7 @@
 			<TD>
 				<SELECT NAME="iscritto_sett_4">					
 					<OPTION VALUE="No">No
-					<OPTION VALUE="Si">S�
+					<OPTION VALUE="Si">S&igrave;
 				</SELECT>
 			</TD>
 			<TD></TD><TD></TD><TD></TD>
@@ -278,7 +278,7 @@
 			<TD>
 				<SELECT NAME="pagata_sett_4">					
 					<OPTION VALUE="No">No
-					<OPTION VALUE="Si">S�
+					<OPTION VALUE="Si">S&igrave;
 				</SELECT>
 			</TD>
 			<TD></TD><TD></TD><TD></TD>

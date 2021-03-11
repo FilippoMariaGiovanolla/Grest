@@ -7,9 +7,9 @@
 		$host_name='localhost';
 		$user_name='root';
 		$conn=mysql_connect($host_name,$user_name,'')
-			or die ("Impossibile stabilire una connessione con il server, chiudere la pagina di inserimento dati");
+			or die ("Impossibile stabilire una connessione con il server, chiudere la pagina di inserimento dati: ".mysql_error());
 		$db=mysql_select_db("grest")
-			or die ("Impossibile selezionare il database desiderato, chiudere la pagina di inserimento dati");
+			or die ("Impossibile selezionare il database desiderato, chiudere la pagina di inserimento dati: ".mysql_error());
 		$i=0;
 	?>
 	<B><h3>Inserimento dei dati nella tabella "Animatori"</h3></B>
@@ -43,7 +43,7 @@
 					$query="SELECT Colore
 						    FROM Squadre";
 					$risultato=mysql_query($query)
-						or die("Impossibile selezionare i colori delle squadre e procedere alla modifica; chiudere la pagina");					
+						or die("Impossibile selezionare i colori delle squadre e procedere alla modifica; chiudere la pagina: ".mysql_error());					
 					while ($squadra=mysql_fetch_row($risultato))
 					   {
 						echo("<OPTION VALUE=".$squadra[$i].">".$squadra[$i]);			

@@ -10,9 +10,9 @@
 	$hostname='localhost';
 	$username='root';
 	$conn=mysql_connect($hostname,$username,'')
-		or die("Impossibile stabilire una connessione con il server");
+		or die("Impossibile stabilire una connessione con il server: ".mysql_error());
 	$db=mysql_select_db("grest")
-		or die("Impossibile selezionare il database del grest");
+		or die("Impossibile selezionare il database del grest: ".mysql_error());
 	$query="UPDATE Squadre
 		    SET Colore='$colore',Nome='$nome' 
 		    WHERE Colore='$colore_vecchio' ";
@@ -24,7 +24,7 @@
 			      FROM Squadre
 			      WHERE Colore='$colore' ";
 		$risultato2=mysql_query($query2)
-			or die("Impossibile mostrare i nuovi dati della squadra");
+			or die("Impossibile mostrare i nuovi dati della squadra: ".mysql_error());
 		$righe=mysql_num_rows($risultato2);
 		$colonne=mysql_num_fields($risultato2);
 		if ($righe>0)
