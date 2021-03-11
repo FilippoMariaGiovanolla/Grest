@@ -24,9 +24,13 @@ h1 {
 }
 
 fieldset {
+    display: flex;
     width:400px;
     height:400px;
     margin-bottom: 20px;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 a {
