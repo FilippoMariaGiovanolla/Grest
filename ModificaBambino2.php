@@ -20,13 +20,11 @@
 			or die("Impossibile selezionare i dati del bambino selezionato; chiudere la pagina o tornare indietro: ".mysql_error());
 		$colonne=mysql_num_fields($risultato);
 		echo("<H3>Modifica ora i campi del modulo sottostante con tutti i dati aggiornati relativi al bambino</H3>");
-		$nominativo=$nome_vecchio." ".$cognome_vecchio;
 		
 		//inzio form
 		echo("<FORM NAME='Modifica' ACTION='ModificaBambino.php' METHOD='POST'>");
-		echo"<INPUT TYPE='hidden' NAME='nominativo' VALUE='".$nominativo."'";
-		//echo"<INPUT TYPE='hidden' NAME='cognome_vecchio' VALUE='$cognome_vecchio'";
-		echo"<BR>";
+		echo("<INPUT TYPE='hidden' NAME='nome_vecchio' VALUE='".$nome_vecchio."'>");
+		echo("<INPUT TYPE='hidden' NAME='cognome_vecchio' VALUE='".$cognome_vecchio."'>");
 		echo("<TABLE BORDER='0'>");
 		echo("<TR>");
 			$riga=mysql_fetch_row($risultato);

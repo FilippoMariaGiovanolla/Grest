@@ -4,10 +4,10 @@
 <HEAD>
 <BODY>
      <?php
-	$nominativo=$_POST["nominativo"];
-	$exp=explode(" ", $nominativo); // la funzione explode è equiparabile allo StringTokenizer di Java
-	$nome_vecchio=$exp[0];
-	$cognome_vecchio=$exp[1];
+	//$nominativo=$_POST["nominativo"];
+	//$exp=explode(" ", $nominativo); // la funzione explode è equiparabile allo StringTokenizer di Java
+	$nome_vecchio=$_POST["nome_vecchio"];
+	$cognome_vecchio=$_POST["cognome_vecchio"];
 	$nome=$_POST["nome"]; 
 	$cognome=$_POST["cognome"];
 	$classe=$_POST["classe"];
@@ -49,6 +49,7 @@
 			  Gita1Sett2='".$gita1sett2."', Gita2Sett2='".$gita2sett2."', Gita1Sett3='".$gita1sett3."', Gita2Sett3='".$gita2sett3."',
 			  Gita1Sett4='".$gita1sett4."', Gita2Sett4='".$gita2sett4."'
 		    WHERE Nome='".$nome_vecchio."' AND Cognome='".$cognome_vecchio."'";
+	//echo("Query: ".$query."<br>");
 	$risultato=mysql_query($query);
 	if($risultato)
              {	
