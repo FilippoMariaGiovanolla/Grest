@@ -14,7 +14,7 @@
 		$codice_vecchio=$_POST["codice_vecchio"];
 		$query="SELECT *
 			    FROM Gite
-			    WHERE Codice='$codice_vecchio'";
+			    WHERE Codice='".$codice_vecchio."'";
 		$risultato=mysql_query($query)
 			or die("Impossibile selezionare i dati della gita/uscita selezionata; chiudere la pagina o tornare indietro: ".mysql_error());
 		$riga=mysql_fetch_row($risultato);
@@ -26,14 +26,14 @@
 		echo"<TABLE>";
 		   echo"<TR>";
 			echo"<TD>Codice</TD>";
-			echo"<TD><INPUT TYPE='TEXT' NAME='codice' SIZE 15 VALUE=$riga[0]></TD>";
+			echo"<TD><INPUT TYPE='TEXT' NAME='codice' SIZE 15 VALUE='".$riga[0]."'></TD>";
 		   echo"</TR>";
 		   echo"<TR>";
 			echo"<TD>Descrizione</TD>";
-			echo"<TD><INPUT TYPE='TEXTAREA' NAME='descrizione' VALUE=$riga[1]></TD>";
+			echo"<TD><INPUT TYPE='TEXTAREA' NAME='descrizione' VALUE='".$riga[1]."'></TD>";
 		   echo"</TR>";
 		echo"</TABLE>";// Fine tabella contenente il modulo form per l'inserimento dei dati
-		echo"<INPUT TYPE='hidden' NAME='codice_vecchio' VALUE='$codice_vecchio'";
+		echo"<INPUT TYPE='hidden' NAME='codice_vecchio' VALUE='".$codice_vecchio."'";
 		echo"<BR>";
 	?>
 	<BR>	      

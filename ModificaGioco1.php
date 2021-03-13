@@ -28,7 +28,7 @@
 					echo"<OPTION VALUE=''>Seleziona";
 					while ($codice=mysql_fetch_row($risultato))
 					   {
-						echo("<OPTION VALUE=".$codice[$i].">".$codice[$i]);			
+						echo("<OPTION VALUE='".$codice[$i]."'>".$codice[$i]);			
 					   }
 				    ?>		
 				</SELECT>

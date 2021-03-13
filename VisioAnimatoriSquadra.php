@@ -13,7 +13,7 @@
 		or die("Impossibile selezionare il database del grest: ".mysql_error());
 	$query="SELECT Nome, Cognome
 		    FROM animatori
-		    WHERE ColoreSquadra='$colore'
+		    WHERE ColoreSquadra='".$colore."'
 		    ORDER BY Cognome, Nome";
 	$risultato=mysql_query($query)
 		or die("Query fallita: ".mysql_error());

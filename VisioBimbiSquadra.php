@@ -13,7 +13,7 @@
 		or die("Impossibile selezionare il database del grest: ".mysql_error());
 	$query="SELECT Nome, Cognome
 		    FROM bambini
-		    WHERE ColoreSquadra='$colore'
+		    WHERE ColoreSquadra='".$colore."'
 		    ORDER BY Classe, Cognome, Nome";
 	$risultato=mysql_query($query)
 		or die("Impossibile visualizzare i bambini della squadra selezionata; chiudere la pagina: ".mysql_error());
@@ -39,7 +39,7 @@
 		echo"<BR>";
 		$query2="SELECT COUNT(*)
 			      FROM Bambini
-			      WHERE ColoreSquadra='$colore'";
+			      WHERE ColoreSquadra='".$colore."'";
 		$risultato2=mysql_query($query2)
 			or die("Impossibile contare tutti i componenti della squadra: ".mysql_error());
 		$righe2=mysql_num_rows($risultato2);
@@ -54,7 +54,7 @@
 		{
 			$query3="SELECT count(*)
 				      FROM Bambini
-				      WHERE ColoreSquadra='$colore' AND IscrittoSett_".$k."='si'";
+				      WHERE ColoreSquadra='".$colore."' AND IscrittoSett_".$k."='si'";
 			$risultato3=mysql_query($query3)
 				or die("Impossibile contare quanti dei bambini di questa squadra sono iscritti alla settimana ".$k.": ".mysql_error());
 			$righe3=mysql_num_rows($risultato3);

@@ -39,7 +39,7 @@ dei dati di ogni squadra</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 						or die("Impossibile selezionare i colori delle squadre; chiudere la pagina: ".mysql_error());
 					echo"<OPTION VALUE=''>Seleziona";
 					while ($colore=mysql_fetch_row($risultato))
-						echo("<OPTION VALUE=".$colore[$i].">".$colore[$i]);
+						echo("<OPTION VALUE='".$colore[$i]."'>".$colore[$i]);
 				?>
 				</SELECT>
 	</div> <br>
@@ -68,7 +68,7 @@ dei dati di ogni squadra</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 						or die("Impossibile selezionare i colori delle squadre; chiudere la pagina: ".mysql_error());
 					echo"<OPTION VALUE=''>Seleziona";	
 					while ($colore=mysql_fetch_row($risultato))
-						echo("<OPTION VALUE=".$colore[$i].">".$colore[$i]);
+						echo("<OPTION VALUE='".$colore[$i]."'>".$colore[$i]);
 				?>
 				</SELECT>
 	</div> <br>

@@ -40,7 +40,7 @@ dei dati di ogni uscita</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 						or die("Impossibile mostrare le gite; chiudere la pagina: ".mysql_error());
 					echo"<OPTION VALUE=''>Seleziona";
 					while ($descrizione=mysql_fetch_row($risultato))
-						echo("<OPTION VALUE=".$descrizione[$i].">".$descrizione[$i+1]);
+						echo("<OPTION VALUE='".$descrizione[$i]."'>".$descrizione[$i+1]);
 				?>
 				</SELECT>
 	</div> <br>

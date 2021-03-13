@@ -40,7 +40,7 @@
 					echo"<OPTION VALUE=''>Seleziona";
 					while ($nome=mysql_fetch_row($risultato))
 					   {
-						echo("<OPTION VALUE=".$nome[$i].">".$nome[$i]);			
+						echo("<OPTION VALUE='".$nome[$i]."'>".$nome[$i]);			
 					   }
 				    ?>	
 				</SELECT>
@@ -59,7 +59,7 @@
 					echo"<OPTION VALUE=''>Seleziona";
 					while ($cognome=mysql_fetch_row($risultato))
 					   {
-						echo("<OPTION VALUE=".$cognome[$i].">".$cognome[$i]);			
+						echo("<OPTION VALUE='".$cognome[$i]."'>".$cognome[$i]);			
 					   }
 				    ?>	
 				</SELECT>

@@ -41,21 +41,21 @@
 	$db=mysql_select_db("grest")
 		or die("Impossibile selezionare il database del grest: ".mysql_error());
 	$query="UPDATE Bambini
-		    SET Nome='$nome', Cognome='$cognome', Classe='$classe', Sesso='$sesso', PreGrest='$pregrest', Mensa='$mensa', 
-		          IscrittoSett_1='$iscritto_sett_1', PagataSett_1='$pagata_sett_1', IscrittoSett_2='$iscritto_sett_2', 
-			  PagataSett_2='$pagata_sett_2', IscrittoSett_3='$iscritto_sett_3', PagataSett_3='$pagata_sett_3', 
-			  IscrittoSett_4='$iscritto_sett_4', PagataSett_4='$pagata_sett_4', Telefono1='$telefono1', Telefono2='$telefono2', 
-			  Telefono3='$telefono3', ColoreSquadra='$squadra', Gita1Sett1='$gita1sett1', Gita2Sett1='$gita2sett1', 
-			  Gita1Sett2='$gita1sett2', Gita2Sett2='$gita2sett2', Gita1Sett3='$gita1sett3', Gita2Sett3='$gita2sett3',
-			  Gita1Sett4='$gita1sett4', Gita2Sett4='$gita2sett4'
-		    WHERE Nome='$nome_vecchio' AND Cognome='$cognome_vecchio' ";
+		    SET Nome='".$nome."', Cognome='".$cognome."', Classe='".$classe."', Sesso='".$sesso."', PreGrest='".$pregrest."', Mensa='".$mensa."', 
+		          IscrittoSett_1='".$iscritto_sett_1."', PagataSett_1='".$pagata_sett_1."', IscrittoSett_2='".$iscritto_sett_2."', 
+			  PagataSett_2='".$pagata_sett_2."', IscrittoSett_3='".$iscritto_sett_3."', PagataSett_3='".$pagata_sett_3."', 
+			  IscrittoSett_4='".$iscritto_sett_4."', PagataSett_4='".$pagata_sett_4."', Telefono1='".$telefono1."', Telefono2='".$telefono2."', 
+			  Telefono3='".$telefono3."', ColoreSquadra='".$squadra."', Gita1Sett1='".$gita1sett1."', Gita2Sett1='".$gita2sett1."', 
+			  Gita1Sett2='".$gita1sett2."', Gita2Sett2='".$gita2sett2."', Gita1Sett3='".$gita1sett3."', Gita2Sett3='".$gita2sett3."',
+			  Gita1Sett4='".$gita1sett4."', Gita2Sett4='".$gita2sett4."'
+		    WHERE Nome='".$nome_vecchio."' AND Cognome='".$cognome_vecchio."'";
 	$risultato=mysql_query($query);
 	if($risultato)
              {	
 		echo("Modifica effettuata con successo, i nuovi dati del bambino sono i seguenti: <BR><BR>");
 		$query2="SELECT *
 			      FROM Bambini
-			      WHERE Nome='$nome' AND Cognome='$cognome' ";
+			      WHERE Nome='".$nome."' AND Cognome='".$cognome."'";
 		$risultato2=mysql_query($query2)
 			or die("Impossibile mostrare i nuovi dati del bambino: ".mysql_error());
 		$righe=mysql_num_rows($risultato2);

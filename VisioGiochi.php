@@ -38,7 +38,7 @@ gioco</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						or die("Impossibile selezionare il nome dei giochi; chiudere la pagina: ".mysql_error());
 					echo"<OPTION VALUE=''>Seleziona";
 					while ($nome=mysql_fetch_row($risultato))
-						echo("<OPTION VALUE=".$nome[$i].">".$nome[$i]);
+						echo("<OPTION VALUE='".$nome[$i]."'>".$nome[$i]);
 				?>
 				</SELECT>
 	</div> <br>

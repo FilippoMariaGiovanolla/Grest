@@ -12,7 +12,7 @@
 		$db=mysql_select_db("grest")
 			or die("Impossibile selezionare il database del grest: ".mysql_error());
 		$query="DELETE FROM Giochi
-			    WHERE Codice='$codice' ";
+			    WHERE Codice='".$codice."'";
 		$risultato=mysql_query($query)
 			or die("Cancellazione fallita; chiudere la pagina: ".mysql_error());
 		echo("Cancellazione avvenuta con successo; il gioco avente codice ".$codice." non rientra pi&ugrave; nella tabella Giochi");

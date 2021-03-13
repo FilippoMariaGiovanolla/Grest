@@ -13,8 +13,9 @@
 	        or die ("Impossibile stabilire una connessione con il server: ".mysql_error());
 	$db=mysql_select_db("grest")
 	       or die ("Impossibile selezionare il database desiderato: ".mysql_error());
-	$query="INSERT INTO gite VALUES ('$codice','$descrizione')";
-	$risultato=mysql_query($query);
+	$query="INSERT INTO gite VALUES ('".$codice."','".$descrizione."')";
+	$risultato=mysql_query($query)
+		or die("Impossibile inserire i dati della gita: ".mysql_error());
 	if($risultato) 
 		echo("Inserimento effettuato con successo");
 	else

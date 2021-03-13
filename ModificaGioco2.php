@@ -14,7 +14,7 @@
 		$nome_vecchio=$_POST["nome_vecchio"];
 		$query="SELECT *
 			    FROM Giochi
-			    WHERE Nome='$nome_vecchio'";
+			    WHERE Nome='".$nome_vecchio."'";
 		$risultato=mysql_query($query)
 			or die("Impossibile selezionare i dati del gioco desiderato; chiudere la pagina o tornare indietro: ".mysql_error());
 		$riga=mysql_fetch_row($risultato);
@@ -22,20 +22,20 @@
 		
 		//inizio form
 		echo("<FORM NAME='Modifica' ACTION='ModificaGioco.php' METHOD='POST'>");
-		echo"<INPUT TYPE='hidden' NAME='nome_vecchio' VALUE='$nome_vecchio'";
+		echo"<INPUT TYPE='hidden' NAME='nome_vecchio' VALUE='".$nome_vecchio."'";
 		echo"<BR>";
 	        echo"<TABLE>";
 		echo"<TR>";
 			echo"<TD>Codice</TD>";
-			echo"<TD><INPUT TYPE='TEXT' NAME='codice' SIZE 10 VALUE=$riga[0]></TD>";
+			echo"<TD><INPUT TYPE='TEXT' NAME='codice' SIZE 10 VALUE='".$riga[0]."'></TD>";
 		echo"</TR>";
 		echo"<TR>";
 			echo"<TD>Nome</TD>";
-			echo"<TD><INPUT TYPE='TEXT' NAME='nome' SIZE 20 VALUE=$riga[1]></TD>";
+			echo"<TD><INPUT TYPE='TEXT' NAME='nome' SIZE 20 VALUE='".$riga[1]."'></TD>";
 		echo"</TR>";
 		echo"<TR>";
 			echo"<TD>Descrizione (opzionale)</TD>";
-			echo"<TD><INPUT TYPE='TEXT' NAME='descrizione' SIZE 200 VALUE=$riga[2]></TD>";
+			echo"<TD><INPUT TYPE='TEXT' NAME='descrizione' SIZE 200 VALUE='".$riga[2]."'></TD>";
 		echo"</TR>";
 		echo"<TR>";
 			echo"<TD>Nome animatore che lo spiega</TD>";
@@ -46,11 +46,11 @@
 						    ORDER BY Nome";
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i nomi degli animatori e procedere alla modifica; chiudere la pagina: ".mysql_error());
-					echo("<OPTION VALUE=".$riga[3].">".$riga[3]);
+					echo("<OPTION VALUE='".$riga[3]."'>".$riga[3]);
 					while ($nome=mysql_fetch_row($risultato))
 					   {
 						if($nome[$i]!=$riga[3])
-							echo("<OPTION VALUE=".$nome[$i].">".$nome[$i]);			
+							echo("<OPTION VALUE='".$nome[$i]."'>".$nome[$i]);			
 					   }
 				echo"</SELECT>";
 			echo"</TD>";
@@ -64,11 +64,11 @@
 						    ORDER BY Cognome";
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i cognomi degli animatori e procedere alla modifica; chiudere la pagina: ".mysql_error());
-					echo("<OPTION VALUE=".$riga[4].">".$riga[4]);
+					echo("<OPTION VALUE='".$riga[4]."'>".$riga[4]);
 					while ($cognome=mysql_fetch_row($risultato))
 					   {
 						if($cognome[$i]!=$riga[4])
-							echo("<OPTION VALUE=".$cognome[$i].">".$cognome[$i]);			
+							echo("<OPTION VALUE='".$cognome[$i]."'>".$cognome[$i]);			
 					   }
 				echo"</SELECT>";
 			echo"</TD>";		     

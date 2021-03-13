@@ -4,7 +4,7 @@
 <HEAD>
 <BODY>
      <?php
-        $nome_vecchio=$_POST["nome_vecchio"];
+    $nome_vecchio=$_POST["nome_vecchio"];
 	$cognome_vecchio=$_POST["cognome_vecchio"];
 	$nome=$_POST["nome"]; 
 	$cognome=$_POST["cognome"];
@@ -21,16 +21,16 @@
 	$db=mysql_select_db("grest")
 		or die("Impossibile selezionare il database del grest: ".mysql_error());
 	$query="UPDATE Animatori
-		    SET Nome='$nome', Cognome='$cognome', Sesso='$sesso', Turno='$turno', Telefono1='$telefono1', Telefono2='$telefono2',
-                          Telefono3='$telefono3', ColoreSquadra='$squadra' 
-		    WHERE Nome='$nome_vecchio' AND Cognome='$cognome_vecchio'";
+		    SET Nome='".$nome."', Cognome='".$cognome."', Sesso='".$sesso."', Turno='".$turno."', Telefono1='".$telefono1."', Telefono2='".$telefono2."',
+                          Telefono3='".$telefono3."', ColoreSquadra='".$squadra."' 
+		    WHERE Nome='".$nome_vecchio."' AND Cognome='".$cognome_vecchio."'";
 	$risultato=mysql_query($query);
 	if($risultato)
              {	
 		echo("Modifica effettuata con successo, i nuovi dati dell'animatore sono i seguenti: <BR><BR>");
 		$query2="SELECT *
 			      FROM Animatori
-			      WHERE Nome='$nome' AND Cognome='$cognome' ";
+			      WHERE Nome='".$nome."' AND Cognome='".$cognome."'";
 		$risultato2=mysql_query($query2)
 			or die("Impossibile mostrare i nuovi dati dell'animatore: ".mysql_error());
 		$righe=mysql_num_rows($risultato2);

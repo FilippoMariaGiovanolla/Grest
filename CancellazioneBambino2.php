@@ -13,7 +13,7 @@
 		$db=mysql_select_db("grest")
 			or die("Impossibile selezionare il database del grest: ".mysql_error());
 		$query="DELETE FROM Bambini
-			    WHERE Nome='$nome' AND Cognome='$cognome' ";
+			    WHERE Nome='".$nome."' AND Cognome='".$cognome."'";
 		$risultato=mysql_query($query)
 			or die("Cancellazione fallita; chiudere la pagina");
 		echo("Cancellazione avvenuta con successo; ".$nome." ".$cognome." non rientra pi&ugrave; nella tabella Bambini");

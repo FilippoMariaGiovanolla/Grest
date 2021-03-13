@@ -13,7 +13,7 @@
 	        or die ("Impossibile stabilire una connessione con il server: ".mysql_error());
 	$db=mysql_select_db("grest")
 	       or die ("Impossibile selezionare il database desiderato: ".mysql_error());
-	$query="INSERT INTO squadre VALUES ('$colore','$nome')";
+	$query="INSERT INTO squadre VALUES ('".$colore."','".$nome."')";
 	$risultato=mysql_query($query);
 	if($risultato) 
 		echo("Inserimento effettuato con successo");

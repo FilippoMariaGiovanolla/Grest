@@ -19,7 +19,7 @@
 	        or die ("Impossibile stabilire una connessione con il server: ".mysql_error());
 	$db=mysql_select_db("grest")
 	       or die ("Impossibile selezionare il database desiderato: ".mysql_error());
-	$query="INSERT INTO animatori VALUES ('$nome','$cognome','$sesso','$turno','$telefono1','$telefono2','$telefono3','$squadra')";
+	$query="INSERT INTO animatori VALUES ('".$nome."','".$cognome."','".$sesso."','".$turno."','".$telefono1."','".$telefono2."','".$telefono3."','".$squadra."')";
 	$risultato=mysql_query($query);
 	if($risultato) 
 		echo("Inserimento effettuato con successo");

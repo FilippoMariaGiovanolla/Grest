@@ -37,10 +37,10 @@
 	        or die ("Impossibile stabilire una connessione con il server: ".mysql_error());
 	$db=mysql_select_db("grest")
 	       or die ("Impossibile selezionare il database desiderato: ".mysql_error());
-	$query="INSERT INTO bambini VALUES ('$nome','$cognome','$classe','$sesso','$pregrest','$mensa','$iscritto_sett_1','$pagata_sett_1',
-	                                                     '$iscritto_sett_2','$pagata_sett_2','$iscritto_sett_3','$pagata_sett_3','$iscritto_sett_4',
-							     '$pagata_sett_4','$telefono1','$telefono2','$telefono3','$squadra','$gita1sett1','$gita2sett1',
-							     '$gita1sett2','$gita2sett2','$gita1sett3','$gita2sett3','$gita1sett4','$gita2sett4')";
+	$query="INSERT INTO bambini VALUES ('".$nome."','".$cognome."','".$classe."','".$sesso."','".$pregrest."','".$mensa."','".$iscritto_sett_1."','".$pagata_sett_1."',
+	                                                     '".$iscritto_sett_2."','".$pagata_sett_2."','".$iscritto_sett_3."','".$pagata_sett_3."','".$iscritto_sett_4."',
+							     '".$pagata_sett_4."','".$telefono1."','".$telefono2."','".$telefono3."','".$squadra."','".$gita1sett1."','".$gita2sett1."',
+							     '".$gita1sett2."','".$gita2sett2."','".$gita1sett3."','".$gita2sett3."','".$gita1sett4."','".$gita2sett4."')";
 	$risultato=mysql_query($query);
 	if($risultato) 
 		echo("Inserimento effettuato con successo");

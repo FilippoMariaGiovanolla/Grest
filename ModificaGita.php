@@ -14,15 +14,15 @@
 	$db=mysql_select_db("grest")
 		or die("Impossibile selezionare il database del grest: ".mysql_error());
 	$query="UPDATE Gite
-		    SET Codice='$codice', Descrizione='$descrizione' 
-		    WHERE Codice='$codice_vecchio' ";
+		    SET Codice='".$codice."', Descrizione='".$descrizione."' 
+		    WHERE Codice='".$codice_vecchio."'";
 	$risultato=mysql_query($query);
 	if($risultato)
              {	
 		echo("Modifica effettuata con successo, i nuovi dati della gita/uscita sono i seguenti: <BR><BR>");
 		$query2="SELECT *
 			      FROM Gite
-			      WHERE Codice='$codice' ";
+			      WHERE Codice='".$codice."'";
 		$risultato2=mysql_query($query2)
 			or die("Impossibile mostrare i nuovi dati della gita/uscita: ".mysql_error());
 		$righe=mysql_num_rows($risultato2);

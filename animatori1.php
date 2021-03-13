@@ -46,7 +46,7 @@
 						or die("Impossibile selezionare i colori delle squadre e procedere alla modifica; chiudere la pagina: ".mysql_error());					
 					while ($squadra=mysql_fetch_row($risultato))
 					   {
-						echo("<OPTION VALUE=".$squadra[$i].">".$squadra[$i]);			
+						echo("<OPTION VALUE='".$squadra[$i]."'>".$squadra[$i]);			
 					   }	
 				   ?>	
 				</SELECT>
@@ -65,11 +65,11 @@
 			<TD>Turno</TD>
 			<TD>
 				<SELECT NAME="turno">
-					<OPTION VALUE="Lunedi">Luned�
-					<OPTION VALUE="Martedi">Marted�
-					<OPTION VALUE="Mercoledi">Mercoled�
-					<OPTION VALUE="Giovedi">Gioved�
-					<OPTION VALUE="Venerdi">Venerd�
+					<OPTION VALUE="Lunedi">Luned&igrave;
+					<OPTION VALUE="Martedi">Marted&igrave;
+					<OPTION VALUE="Mercoledi">Mercoled&igrave;
+					<OPTION VALUE="Giovedi">Gioved&igrave;
+					<OPTION VALUE="Venerdi">Venerd&igrave;
 					<OPTION VALUE="Nessuno">Nessuno
 				</SELECT>
 			</TD>

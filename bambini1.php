@@ -69,7 +69,7 @@
 						or die("Impossibile selezionare i colori delle squadre e procedere alla modifica; chiudere la pagina");					
 					while ($squadra=mysql_fetch_row($risultato))
 					   {
-						echo("<OPTION VALUE=".$squadra[$i].">".$squadra[$i]);			
+						echo("<OPTION VALUE='".$squadra[$i]."'>".$squadra[$i]);			
 					   }	
 				   ?>	
 				</SELECT>
@@ -129,7 +129,7 @@
 						or die("Impossibile selezionare i codici delle uscite e procedere alla modifica; chiudere la pagina");					
 					while ($codice=mysql_fetch_row($risultato))
 					   {
-						echo("<OPTION VALUE=".$codice[$i].">".$codice[$i]);			
+						echo("<OPTION VALUE='".$codice[$i]."'>".$codice[$i]);			
 					   }	
 				   ?>	
 				</SELECT>
@@ -144,7 +144,7 @@
 						or die("Impossibile selezionare i codici delle uscite e procedere alla modifica; chiudere la pagina");					
 					while ($codice=mysql_fetch_row($risultato))
 					   {
-						echo("<OPTION VALUE=".$codice[$i].">".$codice[$i]);			
+						echo("<OPTION VALUE='".$codice[$i]."'>".$codice[$i]);			
 					   }	
 				   ?>	
 				</SELECT>
@@ -183,7 +183,7 @@
 						or die("Impossibile selezionare i codici delle uscite e procedere alla modifica; chiudere la pagina");					
 					while ($codice=mysql_fetch_row($risultato))
 					   {
-						echo("<OPTION VALUE=".$codice[$i].">".$codice[$i]);			
+						echo("<OPTION VALUE='".$codice[$i]."'>".$codice[$i]);			
 					   }	
 				?>
 				</SELECT>
@@ -198,7 +198,7 @@
 						or die("Impossibile selezionare i codici delle uscite e procedere alla modifica; chiudere la pagina");					
 					while ($codice=mysql_fetch_row($risultato))
 					   {
-						echo("<OPTION VALUE=".$codice[$i].">".$codice[$i]);			
+						echo("<OPTION VALUE='".$codice[$i]."'>".$codice[$i]);			
 					   }	
 				?>
 				</SELECT>
@@ -237,7 +237,7 @@
 						or die("Impossibile selezionare i codici delle uscite e procedere alla modifica; chiudere la pagina");					
 					while ($codice=mysql_fetch_row($risultato))
 					   {
-						echo("<OPTION VALUE=".$codice[$i].">".$codice[$i]);			
+						echo("<OPTION VALUE='".$codice[$i]."'>".$codice[$i]);			
 					   }	
 				?>
 				</SELECT>
@@ -252,7 +252,7 @@
 						or die("Impossibile selezionare i codici delle uscite e procedere alla modifica; chiudere la pagina");					
 					while ($codice=mysql_fetch_row($risultato))
 					   {
-						echo("<OPTION VALUE=".$codice[$i].">".$codice[$i]);			
+						echo("<OPTION VALUE='".$codice[$i]."'>".$codice[$i]);			
 					   }	
 				?>
 				</SELECT>
@@ -291,7 +291,7 @@
 						or die("Impossibile selezionare i codici delle uscite e procedere alla modifica; chiudere la pagina");					
 					while ($codice=mysql_fetch_row($risultato))
 					   {
-						echo("<OPTION VALUE=".$codice[$i].">".$codice[$i]);			
+						echo("<OPTION VALUE='".$codice[$i]."'>".$codice[$i]);			
 					   }	
 				?>
 				</SELECT>
@@ -306,7 +306,7 @@
 						or die("Impossibile selezionare i codici delle uscite e procedere alla modifica; chiudere la pagina");					
 					while ($codice=mysql_fetch_row($risultato))
 					   {
-						echo("<OPTION VALUE=".$codice[$i].">".$codice[$i]);			
+						echo("<OPTION VALUE='".$codice[$i]."'>".$codice[$i]);			
 					   }	
 				?>
 				</SELECT>

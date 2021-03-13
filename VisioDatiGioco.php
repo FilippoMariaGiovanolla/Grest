@@ -13,7 +13,7 @@
 		or die("Impossibile selezionare il database del grest: ".mysql_error());
 	$query="SELECT *
 		    FROM giochi
-		    WHERE Nome='$nome'";
+		    WHERE Nome='".$nome."'";
 	$risultato=mysql_query($query)
 		or die("Query fallita: ".mysql_error());
 	$righe=mysql_num_rows($risultato);

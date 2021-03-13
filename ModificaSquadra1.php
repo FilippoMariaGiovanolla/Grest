@@ -27,7 +27,7 @@
 					echo"<OPTION VALUE=''>Seleziona";
 					while ($colore=mysql_fetch_row($risultato))
 					   {
-						echo("<OPTION VALUE=".$colore[$i].">".$colore[$i]);			
+						echo("<OPTION VALUE='".$colore[$i]."'>".$colore[$i]);			
 					   }
 				    ?>	
 				</SELECT>

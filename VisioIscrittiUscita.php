@@ -13,8 +13,8 @@
 		or die("Impossibile selezionare il database del grest: ".mysql_error());
 	$query="SELECT Nome, Cognome
 		    FROM bambini
-		    WHERE gita1sett1='$gita' or gita2sett1='$gita' or gita1sett2='$gita' or gita2sett2='$gita' or gita1sett3='$gita' or 
-			      gita2sett3='$gita' or gita1sett4='$gita' or gita2sett4='$gita'
+		    WHERE gita1sett1='".$gita."' or gita2sett1='".$gita."' or gita1sett2='".$gita."' or gita2sett2='".$gita."' or gita1sett3='".$gita."' or 
+			      gita2sett3='".$gita."' or gita1sett4='".$gita."' or gita2sett4='".$gita."'
 		    ORDER BY Cognome";
 	$risultato=mysql_query($query)
 		or die("Query fallita: ".mysql_error());
@@ -40,8 +40,8 @@
 		echo"<BR>";
 		$query="SELECT Count(*)
 		    FROM bambini
-		    WHERE gita1sett1='$gita' or gita2sett1='$gita' or gita1sett2='$gita' or gita2sett2='$gita' or gita1sett3='$gita' or 
-			      gita2sett3='$gita' or gita1sett4='$gita' or gita2sett4='$gita'";
+		    WHERE gita1sett1='".$gita."' or gita2sett1='".$gita."' or gita1sett2='".$gita."' or gita2sett2='".$gita."' or gita1sett3='".$gita."' or 
+			      gita2sett3='".$gita."' or gita1sett4='".$gita."' or gita2sett4='".$gita."'";
 		$risultato=mysql_query($query)
 		or die("Query fallita: ".mysql_error());
 		echo("<TABLE BORDER='1' ALIGN='CENTER'

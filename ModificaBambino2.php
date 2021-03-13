@@ -15,7 +15,7 @@
 		$cognome_vecchio=$_POST["cognome_vecchio"];
 		$query="SELECT *
 			    FROM Bambini
-			    WHERE Nome='$nome_vecchio' AND Cognome='$cognome_vecchio'";
+			    WHERE Nome='".$nome_vecchio."' AND Cognome='".$cognome_vecchio."'";
 		$risultato=mysql_query($query)
 			or die("Impossibile selezionare i dati del bambino selezionato; chiudere la pagina o tornare indietro: ".mysql_error());
 		$colonne=mysql_num_fields($risultato);
@@ -24,22 +24,22 @@
 		
 		//inzio form
 		echo("<FORM NAME='Modifica' ACTION='ModificaBambino.php' METHOD='POST'>");
-		echo"<INPUT TYPE='hidden' NAME='nominativo' VALUE='$nominativo'";
+		echo"<INPUT TYPE='hidden' NAME='nominativo' VALUE='".$nominativo."'";
 		//echo"<INPUT TYPE='hidden' NAME='cognome_vecchio' VALUE='$cognome_vecchio'";
 		echo"<BR>";
 		echo("<TABLE BORDER='0'>");
 		echo("<TR>");
 			$riga=mysql_fetch_row($risultato);
 			echo("<TD>Nome</TD>");
-			echo("<TD><INPUT TYPE='TEXT' NAME='nome' SIZE 30 VALUE=$riga[0]></TD>");
+			echo("<TD><INPUT TYPE='TEXT' NAME='nome' SIZE 30 VALUE='".$riga[0]."'></TD>");
 			echo("<TD></TD><TD></TD><TD></TD>");
 			echo("<TD>Cognome</TD>");
-			echo("<TD><INPUT TYPE='TEXT' NAME='cognome' SIZE 30 VALUE=$riga[1]></TD>");
+			echo("<TD><INPUT TYPE='TEXT' NAME='cognome' SIZE 30 VALUE='".$riga[1]."'></TD>");
 			echo("<TD></TD><TD></TD><TD></TD>");
 			echo("<TD>Sesso</TD>");
 			echo("<TD>"); 
 			echo"<SELECT NAME='sesso'>";
-				echo("<OPTION VALUE=".$riga[3].">".$riga[3]);
+				echo("<OPTION VALUE='".$riga[3]."'>".$riga[3]);
 				if($riga[3]=='F')
 					echo("<OPTION VALUE='M'>M");
 				else
@@ -52,14 +52,14 @@
 		    ?>	
 			<SELECT NAME="classe">
 			<?php 
-				if($riga[2]=='e1') echo"<OPTION VALUE=".$riga[2].">Prima elementare";
-				if($riga[2]=='e2') echo"<OPTION VALUE=".$riga[2].">Seconda elementare";
-				if($riga[2]=='e3') echo"<OPTION VALUE=".$riga[2].">Terza elementare";
-				if($riga[2]=='e4') echo"<OPTION VALUE=".$riga[2].">Quarta elementare";
-				if($riga[2]=='e5') echo"<OPTION VALUE=".$riga[2].">Quinta elementare";
-				if($riga[2]=='m1') echo"<OPTION VALUE=".$riga[2].">Prima media";
-				if($riga[2]=='m2') echo"<OPTION VALUE=".$riga[2].">Seconda media";
-				if($riga[2]=='m3') echo"<OPTION VALUE=".$riga[2].">Terza media";
+				if($riga[2]=='e1') echo"<OPTION VALUE='".$riga[2]."'>Prima elementare";
+				if($riga[2]=='e2') echo"<OPTION VALUE='".$riga[2]."'>Seconda elementare";
+				if($riga[2]=='e3') echo"<OPTION VALUE='".$riga[2]."'>Terza elementare";
+				if($riga[2]=='e4') echo"<OPTION VALUE='".$riga[2]."'>Quarta elementare";
+				if($riga[2]=='e5') echo"<OPTION VALUE='".$riga[2]."'>Quinta elementare";
+				if($riga[2]=='m1') echo"<OPTION VALUE='".$riga[2]."'>Prima media";
+				if($riga[2]=='m2') echo"<OPTION VALUE='".$riga[2]."'>Seconda media";
+				if($riga[2]=='m3') echo"<OPTION VALUE='".$riga[2]."'>Terza media";
 				if($riga[2]!='e1') echo"<OPTION VALUE='e1'>Prima elementare";
 				if($riga[2]!='e2') echo"<OPTION VALUE='e2'>Seconda elementare";
 				if($riga[2]!='e3') echo"<OPTION VALUE='e3'>Terza elementare";
@@ -79,7 +79,7 @@
 			<TD>Telefono 1</TD>
 			<?php 
 				if($riga[14]!="")
-					echo"<TD><INPUT TYPE='TEXT' NAME='telefono1' VALUE=".$riga[14]." SIZE 15></TD>";
+					echo"<TD><INPUT TYPE='TEXT' NAME='telefono1' VALUE='".$riga[14]."' SIZE 15></TD>";
 				else
 					echo"<TD><INPUT TYPE='TEXT' NAME='telefono1' SIZE 15></TD>";
 			?>
@@ -87,7 +87,7 @@
 			<TD>Telefono 2</TD>
 			<?php 
 				if($riga[15]!="")
-					echo"<TD><INPUT TYPE='TEXT' NAME='telefono2' VALUE=".$riga[15]." SIZE 15></TD>";
+					echo"<TD><INPUT TYPE='TEXT' NAME='telefono2' VALUE='".$riga[15]."' SIZE 15></TD>";
 				else
 					echo"<TD><INPUT TYPE='TEXT' NAME='telefono2' SIZE 15></TD>";
 			?>
@@ -95,7 +95,7 @@
 			<TD>Telefono 3</TD>
 			<?php 
 				if($riga[16]!="")
-					echo"<TD><INPUT TYPE='TEXT' NAME='telefono3' VALUE=".$riga[16]." SIZE 15></TD>";
+					echo"<TD><INPUT TYPE='TEXT' NAME='telefono3' VALUE='".$riga[16]."' SIZE 15></TD>";
 				else
 					echo"<TD><INPUT TYPE='TEXT' NAME='telefono3' SIZE 15></TD>";
 			?>
@@ -111,11 +111,11 @@
 						    ORDER BY Colore";
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i colori delle squadre e procedere alla modifica; chiudere la pagina: ".mysql_error());
-					echo"<OPTION VALUE=".$riga[17].">".$riga[17];
+					echo"<OPTION VALUE='".$riga[17]."'>".$riga[17];
 					while ($squadra=mysql_fetch_row($risultato))
 					   {
 						if($squadra[$i]!=$riga[17])
-							echo("<OPTION VALUE=".$squadra[$i].">".$squadra[$i]);			
+							echo("<OPTION VALUE='".$squadra[$i]."'>".$squadra[$i]);			
 					   }
 				   ?>	
 				</SELECT>
@@ -125,11 +125,11 @@
 			<TD>
 				<SELECT NAME="pregrest">
 				<?php
-					echo("<OPTION VALUE=".$riga[4].">".$riga[4]);
+					echo("<OPTION VALUE='".$riga[4]."'>".$riga[4]);
 					if($riga[4]=='Si')
 						echo("<OPTION VALUE='No'>No");
 					else
-						echo("<OPTION VALUE='Si'>S�");
+						echo("<OPTION VALUE='Si'>S&igrave;");
 				?>
 				</SELECT>
 			</TD>
@@ -138,11 +138,11 @@
 			<TD>
 				<SELECT NAME="mensa">					
 				<?php
-					echo"<OPTION VALUE=".$riga[5].">".$riga[5];
+					echo"<OPTION VALUE='".$riga[5]."'>".$riga[5];
 					if($riga[5]=="Si")
 						echo"<OPTION VALUE='No'>No";
 					else
-						echo"<OPTION VALUE='Si'>S�";
+						echo"<OPTION VALUE='Si'>S&igrave;";
 				?>
 				</SELECT>
 			</TD>
@@ -162,11 +162,11 @@
 			<TD>
 				<SELECT NAME="iscritto_sett_1">					
 				<?php
-					echo"<OPTION VALUE=".$riga[6].">".$riga[6];
+					echo"<OPTION VALUE='".$riga[6]."'>".$riga[6];
 					if($riga[6]=="Si")
 						echo"<OPTION VALUE='No'>No";
 					else
-						echo"<OPTION VALUE='Si'>S�";
+						echo"<OPTION VALUE='Si'>S&igrave;";
 				?>
 				</SELECT>
 			</TD>
@@ -175,11 +175,11 @@
 			<TD>
 				<SELECT NAME="pagata_sett_1">
 				<?php
-					echo"<OPTION VALUE=".$riga[7].">".$riga[7];
+					echo"<OPTION VALUE='".$riga[7]."'>".$riga[7];
 					if($riga[7]=="Si")
 						echo"<OPTION VALUE='No'>No";
 					else
-						echo"<OPTION VALUE='Si'>S�";
+						echo"<OPTION VALUE='Si'>S&igrave;";
 				?>	
 				</SELECT>
 			</TD>
@@ -195,15 +195,15 @@
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i codici delle uscite e procedere alla modifica; chiudere la pagina: ".mysql_error());
 					if($riga[18]=="no")
-						echo"<OPTION VALUE=".$riga[18].">Non iscritto";
+						echo"<OPTION VALUE='".$riga[18]."'>Non iscritto";
 					else
-						echo"<OPTION VALUE=".$riga[18].">".$riga[18];
+						echo"<OPTION VALUE='".$riga[18]."'>".$riga[18];
 					while ($codice=mysql_fetch_row($risultato))
 					   {
 						if(!($codice[$i]==$riga[18]))
-							echo("<OPTION VALUE=".$codice[$i].">".$codice[$i]);
+							echo("<OPTION VALUE='".$codice[$i]."'>".$codice[$i]);
 						if($riga[18]!="no")
-							$iscritto="si"; // variabile che serve per testare se il bambino risulta o meno gi� iscritto ad una gita
+							$iscritto="si"; // variabile che serve per testare se il bambino risulta o meno già iscritto ad una gita
 					   }
 					if($iscritto=="si")
 						echo"<OPTION VALUE='no'>Non iscritto";
@@ -219,13 +219,13 @@
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i codici delle uscite e procedere alla modifica; chiudere la pagina: ".mysql_error());
 					if($riga[19]=="no")
-						echo"<OPTION VALUE=".$riga[19].">Non iscritto";
+						echo"<OPTION VALUE='".$riga[19]."'>Non iscritto";
 					else
-						echo"<OPTION VALUE=".$riga[19].">".$riga[19];
+						echo"<OPTION VALUE='".$riga[19]."'>".$riga[19];
 					while ($codice=mysql_fetch_row($risultato))
 					   {
 						if(!($codice[$i]==$riga[19]))
-							echo("<OPTION VALUE=".$codice[$i].">".$codice[$i]);
+							echo("<OPTION VALUE='".$codice[$i]."'>".$codice[$i]);
 						if($riga[19]!="no")
 							$iscritto="si";
 					   }
@@ -247,11 +247,11 @@
 			<TD>
 				<SELECT NAME="iscritto_sett_2">					
 				<?php
-					echo"<OPTION VALUE=".$riga[8].">".$riga[8];
+					echo"<OPTION VALUE='".$riga[8]."'>".$riga[8];
 					if($riga[8]=="Si")
 						echo"<OPTION VALUE='No'>No";
 					else
-						echo"<OPTION VALUE='Si'>S�";
+						echo"<OPTION VALUE='Si'>S&igrave;";
 				?>	
 				</SELECT>
 			</TD>
@@ -260,11 +260,11 @@
 			<TD>
 				<SELECT NAME="pagata_sett_2">					
 				<?php
-					echo"<OPTION VALUE=".$riga[9].">".$riga[9];
+					echo"<OPTION VALUE='".$riga[9]."'>".$riga[9];
 					if($riga[9]=="Si")
 						echo"<OPTION VALUE='No'>No";
 					else
-						echo"<OPTION VALUE='Si'>S�";
+						echo"<OPTION VALUE='Si'>S&igrave;";
 				?>	
 				</SELECT>
 			</TD>
@@ -277,13 +277,13 @@
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i codici delle uscite e procedere alla modifica; chiudere la pagina: ".mysql_error());
 					if($riga[20]=="no")
-						echo"<OPTION VALUE=".$riga[20].">Non iscritto";
+						echo"<OPTION VALUE='".$riga[20]."'>Non iscritto";
 					else
-						echo"<OPTION VALUE=".$riga[20].">".$riga[20];
+						echo"<OPTION VALUE='".$riga[20]."'>".$riga[20];
 					while ($codice=mysql_fetch_row($risultato))
 					   {
 						if(!($codice[$i]==$riga[20]))
-							echo("<OPTION VALUE=".$codice[$i].">".$codice[$i]);
+							echo("<OPTION VALUE='".$codice[$i]."'>".$codice[$i]);
 						if($riga[20]!="no")
 							$iscritto="si";
 					   }
@@ -301,13 +301,13 @@
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i codici delle uscite e procedere alla modifica; chiudere la pagina: ".mysql_error());
 					if($riga[21]=="no")
-						echo"<OPTION VALUE=".$riga[21].">Non iscritto";
+						echo"<OPTION VALUE='".$riga[21]."'>Non iscritto";
 					else
-						echo"<OPTION VALUE=".$riga[21].">".$riga[21];
+						echo"<OPTION VALUE='".$riga[21]."'>".$riga[21];
 					while ($codice=mysql_fetch_row($risultato))
 					   {
 						if(!($codice[$i]==$riga[21]))
-							echo("<OPTION VALUE=".$codice[$i].">".$codice[$i]);
+							echo("<OPTION VALUE='".$codice[$i]."'>".$codice[$i]);
 						if($riga[21]!="no")
 							$iscritto="si";
 					   }
@@ -329,11 +329,11 @@
 			<TD>
 				<SELECT NAME="iscritto_sett_3">					
 				<?php
-					echo"<OPTION VALUE=".$riga[10].">".$riga[10];
+					echo"<OPTION VALUE='".$riga[10]."'>".$riga[10];
 					if($riga[10]=="Si")
 						echo"<OPTION VALUE='No'>No";
 					else
-						echo"<OPTION VALUE='Si'>S�";
+						echo"<OPTION VALUE='Si'>S&igrave;";
 				?>
 				</SELECT>
 			</TD>
@@ -342,11 +342,11 @@
 			<TD>
 				<SELECT NAME="pagata_sett_3">					
 				<?php
-					echo"<OPTION VALUE=".$riga[11].">".$riga[11];
+					echo"<OPTION VALUE='".$riga[11]."'>".$riga[11];
 					if($riga[11]=="Si")
 						echo"<OPTION VALUE='No'>No";
 					else
-						echo"<OPTION VALUE='Si'>S�";
+						echo"<OPTION VALUE='Si'>S&igrave;";
 				?>	
 				</SELECT>
 			</TD>
@@ -359,13 +359,13 @@
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i codici delle uscite e procedere alla modifica; chiudere la pagina: ".mysql_error());
 					if($riga[22]=="no")
-						echo"<OPTION VALUE=".$riga[22].">Non iscritto";
+						echo"<OPTION VALUE='".$riga[22]."'>Non iscritto";
 					else
-						echo"<OPTION VALUE=".$riga[22].">".$riga[22];
+						echo"<OPTION VALUE='".$riga[22]."'>".$riga[22];
 					while ($codice=mysql_fetch_row($risultato))
 					   {
 						if(!($codice[$i]==$riga[22]))
-							echo("<OPTION VALUE=".$codice[$i].">".$codice[$i]);
+							echo("<OPTION VALUE='".$codice[$i]."'>".$codice[$i]);
 						if($riga[22]!="no")
 							$iscritto="si";
 					   }
@@ -383,13 +383,13 @@
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i codici delle uscite e procedere alla modifica; chiudere la pagina: ".mysql_error());
 					if($riga[23]=="no")
-						echo"<OPTION VALUE=".$riga[23].">Non iscritto";
+						echo"<OPTION VALUE='".$riga[23]."'>Non iscritto";
 					else
-						echo"<OPTION VALUE=".$riga[23].">".$riga[23];
+						echo"<OPTION VALUE='".$riga[23]."'>".$riga[23];
 					while ($codice=mysql_fetch_row($risultato))
 					   {
 						if(!($codice[$i]==$riga[23]))
-							echo("<OPTION VALUE=".$codice[$i].">".$codice[$i]);
+							echo("<OPTION VALUE='".$codice[$i]."'>".$codice[$i]);
 						if($riga[23]!="no")
 							$iscritto="si";
 					   }
@@ -411,11 +411,11 @@
 			<TD>
 				<SELECT NAME="iscritto_sett_4">					
 				<?php
-					echo"<OPTION VALUE=".$riga[12].">".$riga[12];
+					echo"<OPTION VALUE='".$riga[12]."'>".$riga[12];
 					if($riga[12]=="Si")
 						echo"<OPTION VALUE='No'>No";
 					else
-						echo"<OPTION VALUE='Si'>S�";
+						echo"<OPTION VALUE='Si'>S&igrave;";
 				?>
 				</SELECT>
 			</TD>
@@ -424,11 +424,11 @@
 			<TD>
 				<SELECT NAME="pagata_sett_4">					
 				<?php
-					echo"<OPTION VALUE=".$riga[13].">".$riga[13];
+					echo"<OPTION VALUE='".$riga[13]."'>".$riga[13];
 					if($riga[13]=="Si")
 						echo"<OPTION VALUE='No'>No";
 					else
-						echo"<OPTION VALUE='Si'>S�";
+						echo"<OPTION VALUE='Si'>S&igrave;";
 				?>
 				</SELECT>
 			</TD>
@@ -441,13 +441,13 @@
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i codici delle uscite e procedere alla modifica; chiudere la pagina: ".mysql_error());
 					if($riga[24]=="no")
-						echo"<OPTION VALUE=".$riga[24].">Non iscritto";
+						echo"<OPTION VALUE='".$riga[24]."'>Non iscritto";
 					else
-						echo"<OPTION VALUE=".$riga[24].">".$riga[24];
+						echo"<OPTION VALUE='".$riga[24]."'>".$riga[24];
 					while ($codice=mysql_fetch_row($risultato))
 					   {
 						if(!($codice[$i]==$riga[24]))
-							echo("<OPTION VALUE=".$codice[$i].">".$codice[$i]);
+							echo("<OPTION VALUE='".$codice[$i]."'>".$codice[$i]);
 						if($riga[24]!="no")
 							$iscritto="si";
 					   }
@@ -465,13 +465,13 @@
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i codici delle uscite e procedere alla modifica; chiudere la pagina: ".mysql_error());
 					if($riga[25]=="no")
-						echo"<OPTION VALUE=".$riga[25].">Non iscritto";
+						echo"<OPTION VALUE='".$riga[25]."'>Non iscritto";
 					else
-						echo"<OPTION VALUE=".$riga[25].">".$riga[25];
+						echo"<OPTION VALUE='".$riga[25]."'>".$riga[25];
 					while ($codice=mysql_fetch_row($risultato))
 					   {
 						if(!($codice[$i]==$riga[25]))
-							echo("<OPTION VALUE=".$codice[$i].">".$codice[$i]);
+							echo("<OPTION VALUE='".$codice[$i]."'>".$codice[$i]);
 						if($riga[25]!="no")
 							$iscritto="si";
 					   }

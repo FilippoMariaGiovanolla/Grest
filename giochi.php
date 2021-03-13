@@ -16,7 +16,7 @@
 	        or die ("Impossibile stabilire una connessione con il server: ".mysql_error());
 	$db=mysql_select_db("grest")
 	       or die ("Impossibile selezionare il database desiderato: ".mysql_error());
-	$query="INSERT INTO giochi VALUES ('$codice','$nome','$descrizione','$nomerelatore','$cognomerelatore')";
+	$query="INSERT INTO giochi VALUES ('".$codice."','".$nome."','".$descrizione."','".$nomerelatore."','".$cognomerelatore."')";
 	$risultato=mysql_query($query);
 	if($risultato) 
 		echo("Inserimento effettuato con successo");

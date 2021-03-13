@@ -12,10 +12,13 @@
 			or die ("Impossibile selezionare il database desiderato, chiudere la pagina di inserimento dati: ".mysql_error());
 		$i=0;
 		$nome_vecchio=$_POST["nome_vecchio"];
+		//echo("Nome vecchio: ".$nome_vecchio."<br>");
 		$cognome_vecchio=$_POST["cognome_vecchio"];
+		//echo("Cognome vecchio: ".$cognome_vecchio."<br>");
 		$query="SELECT *
 			    FROM Animatori
-			    WHERE Nome='$nome_vecchio' AND Cognome='$cognome_vecchio'";
+			    WHERE Nome='".$nome_vecchio."' AND Cognome='".$cognome_vecchio."'";
+		//echo("Query: ".$query."<br>");
 		$risultato=mysql_query($query)
 			or die("Impossibile selezionare i dati dell'animatore selezionato; chiudere la pagina o tornare indietro: ".mysql_error());
 		//$colonne=mysql_num_fields($risultato);
@@ -27,11 +30,11 @@
 		echo("<TR>");
 			$riga=mysql_fetch_row($risultato);
 			echo("<TD>Nome</TD>");
-			echo("<TD><INPUT TYPE='TEXT' NAME='nome' SIZE 30 VALUE=$riga[0]></TD>");
+			echo("<TD><INPUT TYPE='TEXT' NAME='nome' SIZE 30 VALUE='".$riga[0]."'></TD>");
 			echo("</TR>");
 			echo("<TR>");
 			echo("<TD>Cognome</TD>");
-			echo("<TD><INPUT TYPE='TEXT' NAME='cognome' SIZE 30 VALUE=$riga[1]></TD>");
+			echo("<TD><INPUT TYPE='TEXT' NAME='cognome' SIZE 30 VALUE='".$riga[1]."'></TD>");
 			echo("</TR>");
 		?>
 		<TR>
@@ -39,7 +42,7 @@
 			<TD>
 				<SELECT NAME="sesso">
 				<?php
-					echo("<OPTION VALUE=".$riga[2].">".$riga[2]);
+					echo("<OPTION VALUE='".$riga[2]."'>".$riga[2]);
 					if($riga[2]=='F')
 						echo("<OPTION VALUE='M'>M");
 					else
@@ -53,17 +56,17 @@
 			<TD>
 				<SELECT NAME="turno">
 				<?php 
-					if($riga[3]=='Lunedi') echo"<OPTION VALUE=".$riga[3].">Luned�";
-					if($riga[3]=='Martedi') echo"<OPTION VALUE=".$riga[3].">Marted�";
-					if($riga[3]=='Mercoledi') echo"<OPTION VALUE=".$riga[3].">Mercoled�";
-					if($riga[3]=='Giovedi') echo"<OPTION VALUE=".$riga[3].">Gioved�";
-					if($riga[3]=='Venerdi') echo"<OPTION VALUE=".$riga[3].">Venerd�";
-					if($riga[3]=='Nessuno') echo"<OPTION VALUE=".$riga[3].">Nessuno";
-					if($riga[3]!='Lunedi') echo"<OPTION VALUE='Lunedi'>Luned�";
-					if($riga[3]!='Martedi') echo"<OPTION VALUE='Martedi'>Marted�";
-					if($riga[3]!='Mercoledi') echo"<OPTION VALUE='Mercoledi'>Mercoled�";
-					if($riga[3]!='Giovedi') echo"<OPTION VALUE='Giovedi'>Gioved�";
-					if($riga[3]!='Venerdi') echo"<OPTION VALUE='Venerdi'>Venerd�";
+					if($riga[3]=='Lunedi') echo"<OPTION VALUE='".$riga[3]."'>Luned&igrave;";
+					if($riga[3]=='Martedi') echo"<OPTION VALUE='".$riga[3]."'>Marted&igrave;";
+					if($riga[3]=='Mercoledi') echo"<OPTION VALUE='".$riga[3]."'>Mercoled&igrave;";
+					if($riga[3]=='Giovedi') echo"<OPTION VALUE='".$riga[3]."'>Gioved&igrave;";
+					if($riga[3]=='Venerdi') echo"<OPTION VALUE='".$riga[3]."'>Venerd&igrave;";
+					if($riga[3]=='Nessuno') echo"<OPTION VALUE='".$riga[3]."'>Nessuno";
+					if($riga[3]!='Lunedi') echo"<OPTION VALUE='Lunedi'>Luned&igrave;";
+					if($riga[3]!='Martedi') echo"<OPTION VALUE='Martedi'>Marted&igrave;";
+					if($riga[3]!='Mercoledi') echo"<OPTION VALUE='Mercoledi'>Mercoled&igrave;";
+					if($riga[3]!='Giovedi') echo"<OPTION VALUE='Giovedi'>Gioved&igrave;";
+					if($riga[3]!='Venerdi') echo"<OPTION VALUE='Venerdi'>Venerd&igrave;";
 					if($riga[3]!='Nessuno') echo"<OPTION VALUE='Nessuno'>Nessuno";
 				?>
 				</SELECT>	
@@ -73,7 +76,7 @@
 			<TD>Telefono 1</TD>
 			<?php 
 				if($riga[4]!="")
-					echo"<TD><INPUT TYPE='TEXT' NAME='telefono1' VALUE=".$riga[4]." SIZE 15></TD>";
+					echo"<TD><INPUT TYPE='TEXT' NAME='telefono1' VALUE='".$riga[4]."' SIZE 15></TD>";
 				else
 					echo"<TD><INPUT TYPE='TEXT' NAME='telefono1' SIZE 15></TD>";
 			?>
@@ -82,7 +85,7 @@
 			<TD>Telefono 2</TD>
 			<?php 
 				if($riga[5]!="")
-					echo"<TD><INPUT TYPE='TEXT' NAME='telefono2' VALUE=".$riga[5]." SIZE 15></TD>";
+					echo"<TD><INPUT TYPE='TEXT' NAME='telefono2' VALUE='".$riga[5]."' SIZE 15></TD>";
 				else
 					echo"<TD><INPUT TYPE='TEXT' NAME='telefono2' SIZE 15></TD>";
 			?>
@@ -91,7 +94,7 @@
 			<TD>Telefono 3</TD>
 			<?php 
 				if($riga[6]!="")
-					echo"<TD><INPUT TYPE='TEXT' NAME='telefono3' VALUE=".$riga[6]." SIZE 15></TD>";
+					echo"<TD><INPUT TYPE='TEXT' NAME='telefono3' VALUE='".$riga[6]."' SIZE 15></TD>";
 				else
 					echo"<TD><INPUT TYPE='TEXT' NAME='telefono3' SIZE 15></TD>";
 			?>
@@ -106,11 +109,11 @@
 						    ORDER BY Colore";
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i colori delle squadre e procedere alla modifica; chiudere la pagina: ".mysql_error());
-					echo"<OPTION VALUE=".$riga[7].">".$riga[7];
+					echo"<OPTION VALUE='".$riga[7]."'>".$riga[7];
 					while ($squadra=mysql_fetch_row($risultato))
 					   {
 						if($squadra[$i]!=$riga[7])
-							echo("<OPTION VALUE=".$squadra[$i].">".$squadra[$i]);			
+							echo("<OPTION VALUE='".$squadra[$i]."'>".$squadra[$i]);			
 					   }
 				   ?>	
 				</SELECT>
@@ -119,8 +122,8 @@
 	      </TABLE> <!-- Fine tabella contenente il modulo form per l'inserimento dei dati-->
 	      <?php
 		//echo"<INPUT TYPE='hidden' NAME='colore_vecchio' VALUE='$colore_vecchio'";
-		echo"<INPUT TYPE='hidden' NAME='nome_vecchio' VALUE='$nome_vecchio'>";
-		echo"<INPUT TYPE='hidden' NAME='cognome_vecchio' VALUE='$cognome_vecchio'>";
+		echo"<INPUT TYPE='hidden' NAME='nome_vecchio' VALUE='".$nome_vecchio."'>";
+		echo"<INPUT TYPE='hidden' NAME='cognome_vecchio' VALUE='".$cognome_vecchio."'>";
 	     ?>
 	<BR>	      
 	      <INPUT TYPE="SUBMIT" NAME="invio" VALUE="Attua modifica">

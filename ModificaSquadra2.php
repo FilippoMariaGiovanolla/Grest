@@ -14,7 +14,7 @@
 		$colore_vecchio=$_POST["colore"];
 		$query="SELECT *
 			    FROM Squadre
-			    WHERE Colore='$colore_vecchio'";
+			    WHERE Colore='".$colore_vecchio."'";
 		$risultato=mysql_query($query)
 			or die("Impossibile selezionare i dati della squadra selezionata; chiudere la pagina o tornare indietro: ".mysql_error());
 		$riga=mysql_fetch_row($risultato);
@@ -26,14 +26,14 @@
 		echo"<TABLE>";
 		   echo"<TR>";
 			echo"<TD>Colore</TD>";
-			echo"<TD><INPUT TYPE='TEXT' NAME='colore' SIZE 15 VALUE=$riga[0]></TD>";
+			echo"<TD><INPUT TYPE='TEXT' NAME='colore' SIZE 15 VALUE='".$riga[0]."'></TD>";
 		   echo"</TR>";
 		   echo"<TR>";
 			echo"<TD>Nome</TD>";
-			echo"<TD><INPUT TYPE='TEXT' NAME='nome' SIZE 20 VALUE=$riga[1]></TD>";
+			echo"<TD><INPUT TYPE='TEXT' NAME='nome' SIZE 20 VALUE='".$riga[1]."'></TD>";
 		   echo"</TR>";
 		echo"</TABLE> <!-- Fine tabella contenente il modulo form per l'inserimento dei dati-->";
-		echo"<INPUT TYPE='hidden' NAME='colore_vecchio' VALUE='$colore_vecchio'";
+		echo"<INPUT TYPE='hidden' NAME='colore_vecchio' VALUE='".$colore_vecchio."'";
 		echo"<BR>";
 	?>
 	<BR>	      
