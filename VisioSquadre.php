@@ -82,7 +82,7 @@ dei dati di ogni squadra</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 </form>
 </FIELDSET>
 <BR>
-<A HREF="Index.htm">Torna alla pagina di gestione grest</A><BR><BR>
+<A HREF="index.htm">Torna alla pagina di gestione grest</A><BR><BR>
 <?php
 	mysql_close($conn);
 ?>

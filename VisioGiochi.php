@@ -53,7 +53,7 @@ gioco</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </FIELDSET>
 <BR>
 &nbsp;<p>
-<A HREF="Index.htm">Torna alla pagina di gestione grest</A><BR><BR>
+<A HREF="index.htm">Torna alla pagina di gestione grest</A><BR><BR>
 <?php
 	mysql_close($conn);
 ?>

@@ -54,7 +54,7 @@ dei dati di ogni uscita</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 </form>
 </FIELDSET style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
 <br><br>
-<A HREF="Index.htm">Torna alla pagina di gestione grest</A><BR><BR>
+<A HREF="index.htm">Torna alla pagina di gestione grest</A><BR><BR>
 <?php
 	mysql_close($conn);
 ?>
