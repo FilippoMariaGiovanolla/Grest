@@ -21,7 +21,7 @@
 				<SELECT NAME="codice_vecchio">
 				    <?php
 					$query="SELECT Codice
-					            FROM Gite
+					            FROM gite
 						    ORDER BY Codice";
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i codici delle uscite/gite e procedere alla modifica; chiudere la pagina: ".mysql_error());

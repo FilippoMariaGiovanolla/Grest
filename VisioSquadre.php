@@ -34,7 +34,7 @@ dei dati di ogni squadra</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 				<SELECT NAME="colore">
 				<?php
 					$query="SELECT Colore
-						    FROM Squadre";
+						    FROM squadre";
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i colori delle squadre; chiudere la pagina: ".mysql_error());
 					echo"<OPTION VALUE=''>Seleziona";

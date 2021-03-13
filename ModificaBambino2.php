@@ -14,7 +14,7 @@
 		$nome_vecchio=$_POST["nome_vecchio"];
 		$cognome_vecchio=$_POST["cognome_vecchio"];
 		$query="SELECT *
-			    FROM Bambini
+			    FROM bambini
 			    WHERE Nome='".$nome_vecchio."' AND Cognome='".$cognome_vecchio."'";
 		$risultato=mysql_query($query)
 			or die("Impossibile selezionare i dati del bambino selezionato; chiudere la pagina o tornare indietro: ".mysql_error());
@@ -105,7 +105,7 @@
 				<SELECT NAME="squadra">
 				    <?php
 					$query="SELECT Colore
-						    FROM Squadre
+						    FROM squadre
 						    ORDER BY Colore";
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i colori delle squadre e procedere alla modifica; chiudere la pagina: ".mysql_error());
@@ -188,7 +188,7 @@
 				    <?php
 					$iscritto="no";	
 					$query="SELECT Codice
-						    FROM Gite
+						    FROM gite
 						    ORDER BY Codice";
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i codici delle uscite e procedere alla modifica; chiudere la pagina: ".mysql_error());

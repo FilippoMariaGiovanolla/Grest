@@ -13,7 +13,7 @@
 		or die("Impossibile stabilire una connessione con il server: ".mysql_error());
 	$db=mysql_select_db("grest")
 		or die("Impossibile selezionare il database del grest: ".mysql_error());
-	$query="UPDATE Squadre
+	$query="UPDATE squadre
 		    SET Colore='".$colore."',Nome='".$nome."' 
 		    WHERE Colore='".$colore_vecchio."'";
 	$risultato=mysql_query($query);
@@ -21,7 +21,7 @@
              {	
 		echo("Modifica effettuata con successo, i nuovi dati della squadra sono i seguenti: <BR><BR>");
 		$query2="SELECT *
-			      FROM Squadre
+			      FROM squadre
 			      WHERE Colore='".$colore."'";
 		$risultato2=mysql_query($query2)
 			or die("Impossibile mostrare i nuovi dati della squadra: ".mysql_error());

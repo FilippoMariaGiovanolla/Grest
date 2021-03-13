@@ -38,7 +38,7 @@
 		echo("</TABLE>");
 		echo"<BR>";
 		$query2="SELECT COUNT(*)
-			      FROM Bambini
+			      FROM bambini
 			      WHERE ColoreSquadra='".$colore."'";
 		$risultato2=mysql_query($query2)
 			or die("Impossibile contare tutti i componenti della squadra: ".mysql_error());
@@ -53,7 +53,7 @@
 		for($k=1;$k<5;$k++)
 		{
 			$query3="SELECT count(*)
-				      FROM Bambini
+				      FROM bambini
 				      WHERE ColoreSquadra='".$colore."' AND IscrittoSett_".$k."='si'";
 			$risultato3=mysql_query($query3)
 				or die("Impossibile contare quanti dei bambini di questa squadra sono iscritti alla settimana ".$k.": ".mysql_error());

@@ -11,7 +11,7 @@
 	$db=mysql_select_db("grest")
 		or die("Impossibile selezionare il database del grest: ".mysql_error());
 	$query="SELECT *
-		    FROM Giochi
+		    FROM giochi
 		    ORDER BY Codice";
 	$risultato=mysql_query($query)
 		or die("Query fallita: ".mysql_error());

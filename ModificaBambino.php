@@ -40,7 +40,7 @@
 		or die("Impossibile stabilire una connessione con il server: ".mysql_error());
 	$db=mysql_select_db("grest")
 		or die("Impossibile selezionare il database del grest: ".mysql_error());
-	$query="UPDATE Bambini
+	$query="UPDATE bambini
 		    SET Nome='".$nome."', Cognome='".$cognome."', Classe='".$classe."', Sesso='".$sesso."', PreGrest='".$pregrest."', Mensa='".$mensa."', 
 		          IscrittoSett_1='".$iscritto_sett_1."', PagataSett_1='".$pagata_sett_1."', IscrittoSett_2='".$iscritto_sett_2."', 
 			  PagataSett_2='".$pagata_sett_2."', IscrittoSett_3='".$iscritto_sett_3."', PagataSett_3='".$pagata_sett_3."', 
@@ -55,7 +55,7 @@
              {	
 		echo("Modifica effettuata con successo, i nuovi dati del bambino sono i seguenti: <BR><BR>");
 		$query2="SELECT *
-			      FROM Bambini
+			      FROM bambini
 			      WHERE Nome='".$nome."' AND Cognome='".$cognome."'";
 		$risultato2=mysql_query($query2)
 			or die("Impossibile mostrare i nuovi dati del bambino: ".mysql_error());

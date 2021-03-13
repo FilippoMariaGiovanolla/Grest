@@ -32,7 +32,7 @@ gioco</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<SELECT NAME="nome">
 				<?php
 					$query="SELECT Nome
-						    FROM Giochi
+						    FROM giochi
 						    ORDER BY Nome";
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare il nome dei giochi; chiudere la pagina: ".mysql_error());

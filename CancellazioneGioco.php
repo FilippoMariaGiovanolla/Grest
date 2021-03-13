@@ -21,7 +21,7 @@
 				<SELECT NAME="codice">
 				<?php
 					$query="SELECT Codice
-					            FROM Giochi
+					            FROM giochi
 						    ORDER BY Codice";
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i codici dei giochi e procedere alla modifica; chiudere la pagina: ".mysql_error());

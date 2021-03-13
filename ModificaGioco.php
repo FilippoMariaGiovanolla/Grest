@@ -16,7 +16,7 @@
 		or die("Impossibile stabilire una connessione con il server: ".mysql_error());
 	$db=mysql_select_db("grest")
 		or die("Impossibile selezionare il database del grest: ".mysql_error());
-	$query="UPDATE Giochi
+	$query="UPDATE giochi
 		    SET Codice='".$codice."',Nome='".$nome."',Descrizione='".$descrizione."',NomeRelatore='".$nomerelatore."', CognomeRelatore='".$cognomerelatore."'
 		    WHERE Nome='".$nome_vecchio."'";
 	$risultato=mysql_query($query);
@@ -24,7 +24,7 @@
              {	
 		echo("Modifica effettuata con successo, i nuovi dati del gioco sono i seguenti: <BR><BR>");
 		$query2="SELECT *
-			      FROM Giochi
+			      FROM giochi
 			      WHERE Codice='".$codice."'";
 		$risultato2=mysql_query($query2)
 			or die("Impossibile mostrare i nuovi dati del bambino: ".mysql_error());

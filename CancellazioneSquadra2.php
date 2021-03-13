@@ -11,7 +11,7 @@
 			or die("Impossibile stabilire una connessione con il server: ".mysql_error());
 		$db=mysql_select_db("grest")
 			or die("Impossibile selezionare il database del grest: ".mysql_error());
-		$query="DELETE FROM Squadre
+		$query="DELETE FROM squadre
 			    WHERE Colore='".$colore."'";
 		$risultato=mysql_query($query)
 			or die("Cancellazione fallita; chiudere la pagina: ".mysql_error());

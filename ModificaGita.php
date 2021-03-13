@@ -13,7 +13,7 @@
 		or die("Impossibile stabilire una connessione con il server: ".mysql_error());
 	$db=mysql_select_db("grest")
 		or die("Impossibile selezionare il database del grest: ".mysql_error());
-	$query="UPDATE Gite
+	$query="UPDATE gite
 		    SET Codice='".$codice."', Descrizione='".$descrizione."' 
 		    WHERE Codice='".$codice_vecchio."'";
 	$risultato=mysql_query($query);
@@ -21,7 +21,7 @@
              {	
 		echo("Modifica effettuata con successo, i nuovi dati della gita/uscita sono i seguenti: <BR><BR>");
 		$query2="SELECT *
-			      FROM Gite
+			      FROM gite
 			      WHERE Codice='".$codice."'";
 		$risultato2=mysql_query($query2)
 			or die("Impossibile mostrare i nuovi dati della gita/uscita: ".mysql_error());

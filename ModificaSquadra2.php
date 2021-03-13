@@ -13,7 +13,7 @@
 		$i=0;
 		$colore_vecchio=$_POST["colore"];
 		$query="SELECT *
-			    FROM Squadre
+			    FROM squadre
 			    WHERE Colore='".$colore_vecchio."'";
 		$risultato=mysql_query($query)
 			or die("Impossibile selezionare i dati della squadra selezionata; chiudere la pagina o tornare indietro: ".mysql_error());

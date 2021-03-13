@@ -11,7 +11,7 @@
 	$db=mysql_select_db("grest")
 		or die("Impossibile selezionare il database del grest: ".mysql_error());
 	$query="SELECT Nome,Cognome
-		    FROM Bambini
+		    FROM bambini
 		    WHERE IscrittoSett_3='si' AND PagataSett_3='no'
 		    ORDER BY Classe, Cognome, Nome";
 	$risultato=mysql_query($query)

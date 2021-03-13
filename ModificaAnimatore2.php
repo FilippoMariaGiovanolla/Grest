@@ -16,7 +16,7 @@
 		$cognome_vecchio=$_POST["cognome_vecchio"];
 		//echo("Cognome vecchio: ".$cognome_vecchio."<br>");
 		$query="SELECT *
-			    FROM Animatori
+			    FROM animatori
 			    WHERE Nome='".$nome_vecchio."' AND Cognome='".$cognome_vecchio."'";
 		//echo("Query: ".$query."<br>");
 		$risultato=mysql_query($query)
@@ -105,7 +105,7 @@
 				<SELECT NAME="squadra">
 				    <?php
 					$query="SELECT Colore
-						    FROM Squadre
+						    FROM squadre
 						    ORDER BY Colore";
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i colori delle squadre e procedere alla modifica; chiudere la pagina: ".mysql_error());

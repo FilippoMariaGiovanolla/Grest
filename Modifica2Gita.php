@@ -13,7 +13,7 @@
 		$i=0;
 		$codice_vecchio=$_POST["codice_vecchio"];
 		$query="SELECT *
-			    FROM Gite
+			    FROM gite
 			    WHERE Codice='".$codice_vecchio."'";
 		$risultato=mysql_query($query)
 			or die("Impossibile selezionare i dati della gita/uscita selezionata; chiudere la pagina o tornare indietro: ".mysql_error());

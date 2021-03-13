@@ -21,7 +21,7 @@
 				<SELECT NAME="nome_vecchio">
 				    <?php
 					$query="SELECT DISTINCT Nome
-					            FROM Animatori 
+					            FROM animatori 
 						    ORDER BY Nome";
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i nomi degli animatori e procedere alla modifica; chiudere la pagina: ".mysql_error());
@@ -40,7 +40,7 @@
 				<SELECT NAME="cognome_vecchio">
 				    <?php
 					$query="SELECT DISTINCT Cognome
-					            FROM Animatori
+					            FROM animatori
 						    ORDER BY Cognome";
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i cognomi degli animatori e procedere alla modifica; chiudere la pagina: ".mysql_error());
