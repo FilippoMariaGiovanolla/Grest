@@ -124,7 +124,7 @@
 				    <?php
 					echo("<OPTION VALUE='no'>Non iscritto");
 					$query="SELECT Codice
-						    FROM Gite";
+						    FROM gite";
 					$risultato=mysql_query($query)
 						or die("Impossibile selezionare i codici delle uscite e procedere alla modifica; chiudere la pagina");					
 					while ($codice=mysql_fetch_row($risultato))
