@@ -4,8 +4,8 @@
 </HEAD>
 <BODY>
 <?php
-	$nome=$_POST["nome"]; 
-	$cognome=$_POST["cognome"];
+	$nome=addslashes($_POST["nome"]); 
+	$cognome=addslashes($_POST["cognome"]);
 	$classe=$_POST["classe"];
 	$sesso=$_POST["sesso"];
 	$pregrest=$_POST["pregrest"];
@@ -18,18 +18,18 @@
 	$pagata_sett_3=$_POST["pagata_sett_3"];
 	$iscritto_sett_4=$_POST["iscritto_sett_4"];
 	$pagata_sett_4=$_POST["pagata_sett_4"];
-	$telefono1=$_POST["telefono1"];
-	$telefono2=$_POST["telefono2"];
-	$telefono3=$_POST["telefono3"];
-	$squadra=$_POST["squadra"];
-	$gita1sett1=$_POST["gita1sett1"];
-	$gita2sett1=$_POST["gita2sett1"];
-	$gita1sett2=$_POST["gita1sett2"];
-	$gita2sett2=$_POST["gita2sett2"];
-	$gita1sett3=$_POST["gita1sett3"];
-	$gita2sett3=$_POST["gita2sett3"];
-	$gita1sett4=$_POST["gita1sett4"];
-	$gita2sett4=$_POST["gita2sett4"];
+	$telefono1=addslashes($_POST["telefono1"]);
+	$telefono2=addslashes($_POST["telefono2"]);
+	$telefono3=addslashes($_POST["telefono3"]);
+	$squadra=addslashes($_POST["squadra"]);
+	$gita1sett1=addslashes($_POST["gita1sett1"]);
+	$gita2sett1=addslashes($_POST["gita2sett1"]);
+	$gita1sett2=addslashes($_POST["gita1sett2"]);
+	$gita2sett2=addslashes($_POST["gita2sett2"]);
+	$gita1sett3=addslashes($_POST["gita1sett3"]);
+	$gita2sett3=addslashes($_POST["gita2sett3"]);
+	$gita1sett4=addslashes($_POST["gita1sett4"]);
+	$gita2sett4=addslashes($_POST["gita2sett4"]);
 	// inizio gestione connessione e inserimento
 	$host_name='localhost';
 	$user_name='root';

@@ -11,9 +11,9 @@
 		$db=mysql_select_db("grest")
 			or die ("Impossibile selezionare il database desiderato, chiudere la pagina di inserimento dati: ".mysql_error());
 		$i=0;
-		$nome_vecchio=$_POST["nome_vecchio"];
+		$nome_vecchio=addslashes($_POST["nome_vecchio"]);
 		//echo("Nome vecchio: ".$nome_vecchio."<br>");
-		$cognome_vecchio=$_POST["cognome_vecchio"];
+		$cognome_vecchio=addslashes($_POST["cognome_vecchio"]);
 		//echo("Cognome vecchio: ".$cognome_vecchio."<br>");
 		$query="SELECT *
 			    FROM animatori
@@ -30,11 +30,11 @@
 		echo("<TR>");
 			$riga=mysql_fetch_row($risultato);
 			echo("<TD>Nome</TD>");
-			echo("<TD><INPUT TYPE='TEXT' NAME='nome' SIZE 30 VALUE='".$riga[0]."'></TD>");
+			echo('<TD><INPUT TYPE="TEXT" NAME="nome" SIZE 30 VALUE="'.$riga[0].'"></TD>');
 			echo("</TR>");
 			echo("<TR>");
 			echo("<TD>Cognome</TD>");
-			echo("<TD><INPUT TYPE='TEXT' NAME='cognome' SIZE 30 VALUE='".$riga[1]."'></TD>");
+			echo('<TD><INPUT TYPE="TEXT" NAME="cognome" SIZE 30 VALUE="'.$riga[1].'"></TD>');
 			echo("</TR>");
 		?>
 		<TR>
@@ -122,8 +122,8 @@
 	      </TABLE> <!-- Fine tabella contenente il modulo form per l'inserimento dei dati-->
 	      <?php
 		//echo"<INPUT TYPE='hidden' NAME='colore_vecchio' VALUE='$colore_vecchio'";
-		echo"<INPUT TYPE='hidden' NAME='nome_vecchio' VALUE='".$nome_vecchio."'>";
-		echo"<INPUT TYPE='hidden' NAME='cognome_vecchio' VALUE='".$cognome_vecchio."'>";
+		echo('<INPUT TYPE="hidden" NAME="nome_vecchio" VALUE="'.$nome_vecchio.'">');
+		echo('<INPUT TYPE="hidden" NAME="cognome_vecchio" VALUE="'.$cognome_vecchio.'">');
 	     ?>
 	<BR>	      
 	      <INPUT TYPE="SUBMIT" NAME="invio" VALUE="Attua modifica">

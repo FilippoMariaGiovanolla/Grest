@@ -4,8 +4,10 @@
 </HEAD>
 <BODY>
 	<?php
-		$nome=$_POST["nome"];
-		$cognome=$_POST["cognome"];
+		$nome=addslashes($_POST["nome"]);
+		$cognome=addslashes($_POST["cognome"]);
+		$nomeConfermaCancellazione=$_POST["nome"];
+		$cognomeConfermaCancellazione=$_POST["cognome"];
 		$hostname='localhost';
 		$username='root';
 		$conn=mysql_connect($hostname,$username,'')
@@ -16,7 +18,7 @@
 			    WHERE Nome='".$nome."' AND Cognome='".$cognome."'";
 		$risultato=mysql_query($query)
 			or die("Cancellazione fallita; chiudere la pagina");
-		echo("Cancellazione avvenuta con successo; ".$nome." ".$cognome." non rientra pi&ugrave; nella tabella Bambini");
+		echo("Cancellazione avvenuta con successo; ".$nomeConfermaCancellazione." ".$cognomeConfermaCancellazione." non rientra pi&ugrave; nella tabella Bambini");
 	?>
 	<BR>
 	<BR>

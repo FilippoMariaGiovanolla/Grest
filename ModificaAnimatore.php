@@ -6,8 +6,8 @@
      <?php
     $nome_vecchio=$_POST["nome_vecchio"];
 	$cognome_vecchio=$_POST["cognome_vecchio"];
-	$nome=$_POST["nome"]; 
-	$cognome=$_POST["cognome"];
+	$nome=addslashes($_POST["nome"]); 
+	$cognome=addslashes($_POST["cognome"]);
 	$sesso=$_POST["sesso"];
 	$turno=$_POST["turno"];
 	$telefono1=$_POST["telefono1"];
@@ -24,6 +24,7 @@
 		    SET Nome='".$nome."', Cognome='".$cognome."', Sesso='".$sesso."', Turno='".$turno."', Telefono1='".$telefono1."', Telefono2='".$telefono2."',
                           Telefono3='".$telefono3."', ColoreSquadra='".$squadra."' 
 		    WHERE Nome='".$nome_vecchio."' AND Cognome='".$cognome_vecchio."'";
+	//echo("Query: ".$query."<br>");
 	$risultato=mysql_query($query);
 	if($risultato)
              {	

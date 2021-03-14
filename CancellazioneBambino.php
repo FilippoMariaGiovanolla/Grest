@@ -28,7 +28,7 @@
 					echo("<OPTION VALUE=''>Seleziona");	
 					while ($nome=mysql_fetch_row($risultato))
 					   {
-						echo("<OPTION VALUE='".$nome[$i]."'>".$nome[$i]);
+						echo('<OPTION VALUE="'.$nome[$i].'">'.$nome[$i]);
 					   }
 				?>
 				</SELECT>
@@ -47,7 +47,7 @@
 						or die("Impossibile selezionare i cognomi dei bambini e procedere alla modifica; chiudere la pagina: ".mysql_error());					
 					while ($cognome=mysql_fetch_row($risultato))
 					   {
-						echo("<OPTION VALUE='".$cognome[$i]."'>".$cognome[$i]);			
+						echo('<OPTION VALUE="'.$cognome[$i].'">'.$cognome[$i]);			
 					   }
 				   ?>	
 				</SELECT>

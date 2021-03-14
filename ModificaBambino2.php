@@ -11,11 +11,14 @@
 		$db=mysql_select_db("grest")
 			or die ("Impossibile selezionare il database desiderato, chiudere la pagina di inserimento dati: ".mysql_error());
 		$i=0;
-		$nome_vecchio=$_POST["nome_vecchio"];
-		$cognome_vecchio=$_POST["cognome_vecchio"];
+		$nome_vecchio=addslashes($_POST["nome_vecchio"]);
+		$cognome_vecchio=addslashes($_POST["cognome_vecchio"]);
+		//echo("Nome vecchio: ".$nome_vecchio."<br>");
+		//echo("Cognome vecchio: ".$cognome_vecchio."<br>");
 		$query="SELECT *
 			    FROM bambini
 			    WHERE Nome='".$nome_vecchio."' AND Cognome='".$cognome_vecchio."'";
+		//echo("Query: ".$query."<br>");
 		$risultato=mysql_query($query)
 			or die("Impossibile selezionare i dati del bambino selezionato; chiudere la pagina o tornare indietro: ".mysql_error());
 		$colonne=mysql_num_fields($risultato);
@@ -23,16 +26,16 @@
 		
 		//inzio form
 		echo("<FORM NAME='Modifica' ACTION='ModificaBambino.php' METHOD='POST'>");
-		echo("<INPUT TYPE='hidden' NAME='nome_vecchio' VALUE='".$nome_vecchio."'>");
-		echo("<INPUT TYPE='hidden' NAME='cognome_vecchio' VALUE='".$cognome_vecchio."'>");
+		echo('<INPUT TYPE="hidden" NAME="nome_vecchio" VALUE="'.$nome_vecchio.'">');
+		echo('<INPUT TYPE="hidden" NAME="cognome_vecchio" VALUE="'.$cognome_vecchio.'">');
 		echo("<TABLE BORDER='0'>");
 		echo("<TR>");
 			$riga=mysql_fetch_row($risultato);
 			echo("<TD>Nome</TD>");
-			echo("<TD><INPUT TYPE='TEXT' NAME='nome' SIZE 30 VALUE='".$riga[0]."'></TD>");
+			echo('<TD><INPUT TYPE="TEXT" NAME="nome" SIZE 30 VALUE="'.$riga[0].'"></TD>');
 			echo("<TD></TD><TD></TD><TD></TD>");
 			echo("<TD>Cognome</TD>");
-			echo("<TD><INPUT TYPE='TEXT' NAME='cognome' SIZE 30 VALUE='".$riga[1]."'></TD>");
+			echo('<TD><INPUT TYPE="TEXT" NAME="cognome" SIZE 30 VALUE="'.$riga[1].'"></TD>');
 			echo("<TD></TD><TD></TD><TD></TD>");
 			echo("<TD>Sesso</TD>");
 			echo("<TD>"); 

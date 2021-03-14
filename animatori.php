@@ -4,14 +4,14 @@
 </HEAD>
 <BODY>
 <?php
-	$nome=$_POST["nome"]; 
-	$cognome=$_POST["cognome"];
+	$nome=addslashes($_POST["nome"]); 
+	$cognome=addslashes($_POST["cognome"]);
 	$sesso=$_POST["sesso"];
-	$turno=$_POST["turno"];
-	$telefono1=$_POST["telefono1"];
-	$telefono2=$_POST["telefono2"];
-	$telefono3=$_POST["telefono3"];
-	$squadra=$_POST["squadra"];
+	$turno=addslashes($_POST["turno"]);
+	$telefono1=addslashes($_POST["telefono1"]);
+	$telefono2=addslashes($_POST["telefono2"]);
+	$telefono3=addslashes($_POST["telefono3"]);
+	$squadra=addslashes($_POST["squadra"]);
 	// inizio gestione connessione e inserimento
 	$host_name='localhost';
 	$user_name='root';
